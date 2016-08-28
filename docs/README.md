@@ -2,7 +2,7 @@
 
 [coussie.herokuapp.com][link]
 
-[link]: coussie.herokuapp.com
+[link]: http://coussie.herokuapp.com
 
 ## Minimum Viable Product
 
@@ -30,9 +30,9 @@ adequate seed data and sufficient CSS styling:
 * [Redux Structure][structure]
 * [Sample State][state]
 
-[wireframes]: [/docs/wireframes/]
-[components]: [/docs/react_components.md]
-[endpoints]: [/docs/api_endpoints.md]
-[schema]: [/docs/db_schema.md]
-[structure]: [/docs/redux_structure.md]
-[state]: [/docs/sample_state.md]
+[wireframes]: /docs/wireframes/
+[components]: /docs/react_components.md
+[endpoints]: /docs/api_endpoints.md
+[schema]: /docs/db_schema.md
+[structure]: /docs/redux_structure.md
+[state]: /docs/sample_state.md
