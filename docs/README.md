@@ -11,15 +11,15 @@ and React / Redux. By the end of Week 9, this app will, at a minimum,
 satisfy the following criteria with smoothing, bug-free navigation,
 adequate seed data and sufficient CSS styling:
 
--[] Hosting at Heroku
--[] New account creation, login, and guest/demo login
--[] Restaurant pages
--[] User / reviewer pages
--[] Reviews / ratings
--[] Tags for categorizing restaurants
--[] Google-map integration
--[] Auto-complete search
--[] Production README
+- [ ] Hosting at Heroku
+- [ ] New account creation, login, and guest/demo login
+- [ ] Restaurant pages
+- [ ] User / reviewer pages
+- [ ] Reviews / ratings
+- [ ] Tags for categorizing restaurants
+- [ ] Google-map integration
+- [ ] Auto-complete search
+- [ ] Production README
 
 ## Design Docs
 
