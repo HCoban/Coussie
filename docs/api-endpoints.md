@@ -8,7 +8,7 @@
 ## JSON API
 
 ### Users
- - `GET /api/users/:userId`
+ - `GET /api/users/:userId` (Bonus)
  - `POST /api/users`
  - `PATCH /api/users/:userId`
  - `DELETE /api/usrs/:userId`

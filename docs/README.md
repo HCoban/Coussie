@@ -116,5 +116,6 @@ the API.
 - [ ] Ensure seed data demonstrates infinite scroll
 
 ### Bonus Features (TBD)
+- [ ] Users have profile pages
 - [ ] Restaurants have menus
 - [ ] Users can vote menu items

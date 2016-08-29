@@ -7,12 +7,11 @@ column name     | data type | details
 id              | integer   | not null, primary key
 username        | string    | not null, indexed, unique
 password_digest | string    | not null, indexed, unique
-email           | string    | not null, indexed, unique
+email           | string    |
 city            | string    |
 motto           | text      |
 session_token   | string    | not null, indexed, unique
 picture_url     | string    |
-type            | string    | not null, in ['user', 'owner'], default ['user']
 
 ## restaurants
 
@@ -42,6 +41,6 @@ column name   | data type | details
 id            | integer   | not null, primary key
 reviewer_id   | integer   | not null, foreign key (references users), indexed
 restaurant_id | integer   | not null, foreign key (references restaurants), indexed
-description   | text      | not null
+description   | text      | 
 votes         | integer   | not null, in [1...5]
 picture_url   | string    |

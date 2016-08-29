@@ -11,7 +11,6 @@
  - RestaurantHeader
   + RestaurantIndex
 
-
 **CategoryContainer**
  - CategoryHeader
   + CategoryIndex
