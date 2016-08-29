@@ -32,7 +32,7 @@ adequate seed data and sufficient CSS styling:
 
 [wireframes]: /docs/wireframes/
 [components]: /docs/component-hierarchy.md
-[endpoints]: /docs/api_endpoints.md
+[endpoints]: /docs/api-endpoints.md
 [schema]: /docs/db_schema.md
 [structure]: /docs/redux_structure.md
-[state]: /docs/sample_state.md
+[state]: /docs/sample-state.md
