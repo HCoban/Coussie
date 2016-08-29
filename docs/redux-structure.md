@@ -47,7 +47,7 @@
 ### Restaurants API Request Actions
 
 * `createRestaurant`
-  0. invoked from new restaurant form `onSubmitk`
+  0. invoked from new restaurant form `onSubmit`
   0. `POST /api/restaurants` is called.
   0. `receiveSingleRestaurant` is set as the success callback.
 
