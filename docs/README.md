@@ -31,7 +31,7 @@ adequate seed data and sufficient CSS styling:
 * [Sample State][state]
 
 [wireframes]: /docs/wireframes/
-[components]: /docs/react_components.md
+[components]: /docs/component-hierarchy.md
 [endpoints]: /docs/api_endpoints.md
 [schema]: /docs/db_schema.md
 [structure]: /docs/redux_structure.md
