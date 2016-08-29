@@ -1,17 +1,47 @@
-Component Hierarchy
+## Component Hierarchy
 
-Home Container
-Home
+**AuthFormContainer**
+ - AuthForm
 
-AuthFormContainer
-AuthForm
+**Home Container**
+ - Home
+ - Navbar
 
-CategoryContainer
-CategoryHeader
-CategoryIndex
+**RestaurantContainer**
+ - RestaurantHeader
+  + RestaurantIndex
 
-RestaurantContainer
 
+**CategoryContainer**
+ - CategoryHeader
+  + CategoryIndex
+
+**SearchResultsContainer**
+ - Search
+ - RestaurantIndex
+
+**UserContainer**
+ - UserHeader
+  + UserIndex
+   - ReviewsIndex
+    + ReviewsIndexItem
+
+**NewReviewContainer**
+ - NewReview
+
+**NewRestaurantContainer**
+ - NewRestaurant
+
+**RestaurantIndex**
+ - RestaurantIndexItem
+  + RestaurantDetail
+   * ReviewsIndex
+    - ReviewsIndexItem
+
+**Search**
+
+**NewCategory**
+ - NewCategory
 
 ## Routes
 
@@ -19,8 +49,12 @@ RestaurantContainer
 |-------|------------|
 |"/sign-up"|"AuthFormContainer"|
 |"/sign-in"|"AuthFormContainer"|
-|"home"|"HomeContainer"|
-|"home/restaurant/:restaurantId"|"RestaurantContainer"|
-|"home/restaurant/:restaurantId/review/reviewId"|"ReviewContainer"|
-|"home/user/:userId"|"UserContainer"|
-|"new-review"|"NewReviewContainer"|
+|"/home"|"HomeContainer"|
+|"/home/restaurant/:restaurantId"|"RestaurantContainer"|
+|"/home/category/:categoryId/"|"CategoryContainer"|
+|"home/search-results"|"SearchResultsContainer"|
+|"/home/user/:userId"|"UserContainer"|
+|"/home/restaurant/restaurantId/new-review"|"NewReviewContainer"|
+|"/search"|"Search"|
+|"/new-restaurant"/"NewRestaurantContainer"|
+|"/new-category"|"NewCategory"|
