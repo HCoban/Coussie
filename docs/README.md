@@ -16,7 +16,6 @@ adequate seed data and sufficient CSS styling:
 - [ ] Restaurant pages
 - [ ] User / reviewer pages
 - [ ] Reviews / ratings
-- [ ] Tags for categorizing restaurants
 - [ ] Google-map integration
 - [ ] Auto-complete search
 - [ ] Production README
