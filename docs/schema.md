@@ -28,6 +28,13 @@ category_id | integer   | not null, foreign key (references categories), indexed
 owner_id    | integer   | not null, foreign key (references users), indexed
 price_range | integer   |
 
+## categories
+
+column name | data type | details
+------------|-----------|----------------------
+id          | integer   | not null, primary key
+title       | string    | not null, indexed
+
 ## reviews
 
 column name   | data type | details
