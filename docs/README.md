@@ -34,5 +34,5 @@ adequate seed data and sufficient CSS styling:
 [components]: /docs/component-hierarchy.md
 [endpoints]: /docs/api-endpoints.md
 [schema]: /docs/schema.md
-[structure]: /docs/structure.md
+[structure]: /docs/redux-structure.md
 [state]: /docs/sample-state.md
