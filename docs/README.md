@@ -117,4 +117,4 @@ the API.
 
 ### Bonus Features (TBD)
 - [ ] Restaurants have menus
-- [ ] User's can vote menu items
+- [ ] Users can vote menu items
