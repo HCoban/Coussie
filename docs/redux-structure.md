@@ -61,8 +61,8 @@
   0. `POST /api/restaurants/:restaurantId` is called.
   0. `receiveSingleRestaurant` is set as the success callback.
 
-* `destroyNote`
-  0. invoked from delete note button `onClick`
+* `destroyRestaurant`
+  0. invoked from delete restaurant button `onClick`
   0. `DELETE /api/restaurants/:restaurantId` is called.
   0. `removeRestaurant` is set as the success callback.
 
