@@ -56,5 +56,5 @@
 |"/home/user/:userId"|"UserContainer"|
 |"/home/restaurant/restaurantId/new-review"|"NewReviewContainer"|
 |"/search"|"Search"|
-|"/new-restaurant"/"NewRestaurantContainer"|
+|"/new-restaurant"|"NewRestaurantContainer"|
 |"/new-category"|"NewCategory"|
