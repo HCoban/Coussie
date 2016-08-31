@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom';
 
 document.addEventListener("DOMContentLoaded", () => {
   const store = configureStore();
-  // window.store = store;//for testing
+  window.store = store;//for testing
   // window.receiveCurrentUser = receiveCurrentUser;//for testing
   // window.logIn = logIn;//for testing
   const root = document.getElementById("root");

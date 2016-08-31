@@ -10,6 +10,104 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
+
+ html, body, header, h1, ul, li,
+ button, section, img, div, h2, h3, p, form,
+ label, input, textarea, span {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+ }
+
+ body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background: #eee;
+  box-sizing: border-box;
+ }
+
+ .auth-form-container {
+   display: flex;
+   justify-content: space-between;
+   width: 850px;
+   background: #fff;
+ }
+
+ .auth-form-box {
+   width: 40%;
+   box-sizing: border-box;
+   vertical-align: middle;
+   padding: 140px 50px;
+ }
+
+ .auth-form-header {
+   text-align: center;
+   font-size: 24px;
+   font-weight: 600;
+   color: red;
+ }
+
+ .auth-input {
+   border: 1px solid #a9a9a9;
+   margin: 2px;
+   width: 100%;
+   display: block;
+   border-radius: 5px;
+   background-color: #fdfdbb;
+   padding: 5px;
+ }
+
+
+ .auth-buttons {
+   color: #fff;
+   font-weight: 600px;
+   display: flex;
+   justify-content:space-between;
+   width: 100%;
+   margin-top: 25px;
+ }
+
+ .auth-button {
+   border: 1px solid #a9a9a9;
+   background-color: red;
+   border-radius: 5px;
+   text-align: center;
+   padding: 2px;
+   width: 49%;
+ }
+
+ .logo-container {
+   border-radius: 50%;
+   width: 38%;
+   margin: 40px;
+ }
+
+ .logo {
+   width: 100%;
+   display: block;
+   border-radius: 50%;
+ }
+
+ .auth-form-header-info {
+   font-size: 14px;
+   text-align: center;
+   margin: 5px 0px 14px 0px;
+ }
+
+ a {
+   text-decoration: none;
+   color: blue;
+   font-size: 14px;
+  }
