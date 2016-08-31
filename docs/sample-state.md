@@ -1,8 +1,9 @@
 ```json
-{
-  currentUser: {
-    id: 1,
-    username: "halil"
+{ session: {
+    currentUser: {
+      id: 1,
+      username: "halil"
+    }
   },
   forms: {
     auth: {errors: []},
