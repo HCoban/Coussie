@@ -1,6 +1,6 @@
-import { Greeting } from './greeting';
+import Navbar from './navbar';
 import { connect } from 'react-redux';
-import { logOut } from '../actions/session_actions';
+import { logOut } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
   currentUser: state.session.currentUser
@@ -10,9 +10,9 @@ const mapDispatchToProps = dispatch => ({
   logOut: () => dispatch(logOut())
 });
 
-const GreetingContainer = connect(
+const NavbarContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Greeting);
+)(Navbar);
 
-export default GreetingContainer;
+export default NavbarContainer;

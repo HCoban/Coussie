@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, hashHistory } from 'react-router';
+import { Link, hashHistory, withRouter } from 'react-router';
 
 class AuthForm extends React.Component {
   constructor (props){
@@ -59,11 +59,17 @@ class AuthForm extends React.Component {
 
   redirectIfLoggedIn () {
     if (this.props.loggedIn) {
-      hashHistory.push("/");
+      this.props.router.push("/");
     }
   }
 
   render () {
+    let guestlogin;
+    if (this.props.formType === "login") {
+      guestlogin = <button className="auth-button guest" onClick={this.submit}>Guest Login</button>;
+    } else {
+      guestlogin = "";
+    }
     return (
       <div className="auth-form-container">
         <form className="auth-form-box">
@@ -74,15 +80,15 @@ class AuthForm extends React.Component {
           <input type="password" name="password" className="auth-input" placeholder="password" value={this.state.password} onChange={this.setInput} />
           <div className="auth-buttons">
             <button className="auth-button" onClick={this.submit}>{this.loginOrSignup()}</button>
-            <button className="auth-button guest" onClick={this.submit}>Guest Login</button>
+            {guestlogin}
           </div>
         </form>
-        <div className="logo-container">
-          <img className="logo" src="http://res.cloudinary.com/dguiepgvw/image/upload/v1472670280/ccphoto-1466978913421-dad2ebd01d17_zf09i2.jpg"></img>
+        <div className="auth-form-logo-container">
+          <img className="auth-form-logo" src="http://res.cloudinary.com/dguiepgvw/image/upload/v1472670280/ccphoto-1466978913421-dad2ebd01d17_zf09i2.jpg"></img>
         </div>
       </div>
     );
   }
 }
 
-export default AuthForm;
+export default withRouter(AuthForm);
