@@ -5,12 +5,14 @@ import RestaurantDetail from './detail';
 
 class RestaurantShow extends React.Component {
   componentDidMount () {
+
   }
   render () {
+    let restaurant = this.props.restaurant;
     return (
       <div className="restaurant-show">
         <div className="show-column-1">
-          <RestaurantMap />
+          <RestaurantMap restaurant={restaurant}/>
           <div className="restaurant-info">
             <h2>{this.props.restaurant.name}</h2>
             <h3>{this.props.restaurant.address}</h3>
@@ -18,8 +20,14 @@ class RestaurantShow extends React.Component {
           </div>
         </div>
         <div className="show-column-2">
-          <img src="http://images.clipartpanda.com/restaurant-clipart-restaurant-building-clipart-great.jpg"></img>
-          <img src="http://images.clipartpanda.com/restaurant-clipart-restaurant-building-clipart-great.jpg"></img>
+          <img src={this.props.restaurant.image_url}></img>
+          <img src={this.props.restaurant.image_url}></img>
+          <img src={this.props.restaurant.image_url}></img>
+          <img src={this.props.restaurant.image_url}></img>
+          <img src={this.props.restaurant.image_url}></img>
+          <img src={this.props.restaurant.image_url}></img>
+          <img src={this.props.restaurant.image_url}></img>
+          <img src={this.props.restaurant.image_url}></img>
         </div>
       </div>
     );

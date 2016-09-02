@@ -5,6 +5,6 @@
     json.set! restaurant.id do
       json.average_rating restaurant.average_rating
       json.extract! restaurant, :id, :name, :city, :lat, :lng, :category_id,
-        :owner_id, :website, :telephone, :price_range, :address
+        :owner_id, :website, :telephone, :price_range, :address, :image_url
     end
   end

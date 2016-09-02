@@ -3,23 +3,19 @@ class MarkerManager {
     this.map = map;
     this.handleClick = handleClick;
     this.makers = [];
-    this._createMarkerFromRestaurant = this._createMarkerFromRestaurant.bind(this);
-    this._removeMarker = this.removeMarker.bind(this);
+    this.createMarkerFromRestaurant = this.createMarkerFromRestaurant.bind(this);
   }
 
-  _createMarkerFromRestaurant (restaurant) {
-    const pos = new google.maps.LatLng(restaurant.lat, restaurant.lng);
+  createMarkerFromRestaurant (restaurant) {
+    const pos = new google.maps.LatLng({lat: restaurant.lat, lng: restaurant.lng});
     const marker = new google.maps.Marker({
       position: pos,
       map: this.map,
-      restaurantId: restaurant.id
+      title: restaurant.name
     });
   }
 
 
-  _removeMarker(marker) {
-    marker.setMap(null);
-  }
 }
 
 export default MarkerManager;

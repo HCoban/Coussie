@@ -9,11 +9,10 @@ const RestaurantIndexItem = ({restaurant, router}) => {
     stars.push("*");
   }
   let link = `/restaurants/${restaurant.id}`;
-
   return (
     <div className="restaurant-index-item">
       <div className="restaurant-index-pic-container">
-        <img className="restaurant-item-pic" src="http://images.clipartpanda.com/restaurant-clipart-restaurant-building-clipart-great.jpg"/>
+        <img className="restaurant-item-pic" src={restaurant.image_url}/>
       </div>
       <div className="restaurant-item-info">
         <Link to={link} className="restaurant-item-name">{restaurant.name}</Link>

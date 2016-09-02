@@ -6,13 +6,16 @@ class RestaurantMap extends React.Component {
     const mapDOMNode = this.refs.map;
 
     const mapOptions = {
-      center: {lat: 37.7758, lng: -122.435}, zoom: 13
+      center: {lat: this.props.restaurant.lat, lng: this.props.restaurant.lng}, zoom: 13
     };
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
     this.map.addListener(this.map, 'idle', () => {
-      console.log('map state changed'); //for testing
     });
+
+    this.MarkerManager = new MarkerManager(this.map);
+    this.MarkerManager.createMarkerFromRestaurant(this.props.restaurant);
+
   }
 
   componentDidUpdate () {

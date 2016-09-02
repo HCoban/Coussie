@@ -19,8 +19,15 @@
 class Restaurant < ActiveRecord::Base
   validates :city, :lat, :lng, :category_id, :owner_id, presence: true
   validates :name, presence: true, uniqueness: true
+
+  after_initialize :ensure_image_url
+
   belongs_to :owner,
     class_name: :User
+
+  def ensure_image_url
+    self.image_url ||= "http://images.clipartpanda.com/restaurant-clipart-restaurant-building-clipart-great.jpg"
+  end
 
   def average_rating
     rand(5) + 1;
