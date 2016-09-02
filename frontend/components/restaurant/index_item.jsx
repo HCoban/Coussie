@@ -8,7 +8,7 @@ const RestaurantIndexItem = ({restaurant, router}) => {
   }
 
   return (
-    <li className="restaurant-index-item">
+    <div className="restaurant-index-item">
       <div className="restaurant-index-pic-container">
         <img className="restaurant-item-pic" src="http://images.clipartpanda.com/restaurant-clipart-restaurant-building-clipart-great.jpg"/>
       </div>
@@ -18,8 +18,12 @@ const RestaurantIndexItem = ({restaurant, router}) => {
           {stars}
         </div>
         <div className="restaurant-item-city">{restaurant.city}</div>
+        <div className="review-container">
+          <div className="reviewer-picture">picture</div>
+          <div className="review">placeholder for review</div>
+        </div>
       </div>
-    </li>
+    </div>
   );
 };
 
