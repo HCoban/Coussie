@@ -1,11 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router';
+
 
 const RestaurantIndexItem = ({restaurant, router}) => {
   let stars = [];
   for (var i = 0; i < restaurant.average_rating; i++) {
     stars.push("*");
   }
+  let link = `/restaurants/${restaurant.id}`;
 
   return (
     <div className="restaurant-index-item">
@@ -13,7 +16,7 @@ const RestaurantIndexItem = ({restaurant, router}) => {
         <img className="restaurant-item-pic" src="http://images.clipartpanda.com/restaurant-clipart-restaurant-building-clipart-great.jpg"/>
       </div>
       <div className="restaurant-item-info">
-        <div className="restaurant-item-name">{restaurant.name}</div>
+        <Link to={link} className="restaurant-item-name">{restaurant.name}</Link>
         <div className="restaurant-item-rating">
           {stars}
         </div>

@@ -17,12 +17,11 @@ class Navbar extends React.Component {
   handleUserButton () {
     if (this.props.currentUser) {
       return (
-        <div className="user-button" onClick={this.logout}>
+        <div className="user-button">
           <img src={this.props.currentUser.picture_url} className="user-button-icon"></img>
           <ul className="options">
-            <li>"Option1"</li>
-            <li>"Option2"</li>
-            <li>"Option3"</li>
+            <li>Edit my profile</li>
+            <li onClick={this.logout}>Logout</li>
           </ul>
         </div>
       );

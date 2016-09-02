@@ -4,6 +4,7 @@ import App from '../app';
 import AuthFormContainer from '../auth_form/auth_form_container';
 import RestaurantIndexContainer from '../restaurant/index_container';
 import * as RestaurantActions from '../../actions/restaurant_actions';
+import RestaurantShowContainer from '../restaurant/show_container';
 
 class AppRouter extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class AppRouter extends React.Component {
           <Route path="/signup" component={AuthFormContainer} />
           <Route path="/login" component={AuthFormContainer} />
           <Route path="/restaurants" component={RestaurantIndexContainer} onEnter={this.requestAllRestaurantsOnEnter}/>
+          <Route path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
           <Route path="/about" component={AuthFormContainer} />
           <Route path="/credits" component={AuthFormContainer} />
           <Route path="/acknowledgements" component={AuthFormContainer} />
