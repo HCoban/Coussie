@@ -1,7 +1,7 @@
 import React from 'react';
 import MarkerManager from '../../util/marker_manager';
 
-class Map extends React.Component {
+class RestaurantMap extends React.Component {
   comonentDidMount (){
     const mapDOMNode = this.refs.map;
 
@@ -26,3 +26,5 @@ class Map extends React.Component {
     );
   }
 }
+
+export default RestaurantMap;
