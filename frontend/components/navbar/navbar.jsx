@@ -11,6 +11,7 @@ class Navbar extends React.Component {
     this.searchBox = this.searchBox.bind(this);
     this.setSearch = this.setSearch.bind(this);
     this.logout = this.logout.bind(this);
+    this.home = this.home.bind(this);
   }
 
   handleUserButton () {
@@ -56,12 +57,16 @@ class Navbar extends React.Component {
     );
   }
 
+  home () {
+    this.props.router.push("/");
+  }
+
   render() {
 
     return (
       <div className="navbar">
         <div className="logo-container">
-          <img className="logo" src="http://res.cloudinary.com/dguiepgvw/image/upload/v1472689058/1_Primary_logo_on_transparent_258x75_lv51pq.png"></img>
+          <img onClick={this.home} className="logo" src="http://res.cloudinary.com/dguiepgvw/image/upload/v1472689058/1_Primary_logo_on_transparent_258x75_lv51pq.png"></img>
         </div>
         {this.searchBox()}
         <div>{this.handleUserButton()}</div>
@@ -70,4 +75,4 @@ class Navbar extends React.Component {
   }
 }
 
-export default Navbar;
+export default withRouter(Navbar);

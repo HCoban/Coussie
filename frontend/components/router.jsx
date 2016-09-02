@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, hashHistory } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import App from './app';
 import AuthFormContainer from './auth_form/auth_form_container';
 import RestaurantIndexContainer from './restaurant/index_container';
@@ -19,6 +19,7 @@ class AppRouter extends React.Component {
     return (
       <Router history={hashHistory}>
         <Route path="/" component={App}>
+          <IndexRoute component={RestaurantIndexContainer} onEnter={this.requestAllRestaurantsOnEnter}/>
           <Route path="/signup" component={AuthFormContainer} />
           <Route path="/login" component={AuthFormContainer} />
           <Route path="/restaurants" component={RestaurantIndexContainer} onEnter={this.requestAllRestaurantsOnEnter}/>

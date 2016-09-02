@@ -123,13 +123,18 @@
    font-size: 14px;
   }
 
-  .navbar {
+  header {
     background-color: #f00;
     height: 60px;
-    padding: 2px 350px;
+    padding: 2px;
+  }
+
+  .navbar {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #ccc;
+    width: 1300px;
+    margin: 0 auto;
   }
 
 
@@ -168,6 +173,8 @@
     background-color: white;
     display: flex;
     justify-content: center;
+    width: 1300px;
+    margin: 0 auto;
   }
 
   .restaurant-index {
@@ -244,12 +251,14 @@
     display: block;
     float: left;
     border: 1px solid black;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    box-sizing: border-box;
   }
 
   .review-container {
-    margin-top: 40px;
+    margin-top: 10px;
     margin-left: 10px;
   }
 

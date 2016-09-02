@@ -18,6 +18,7 @@ const RestaurantIndexItem = ({restaurant, router}) => {
           {stars}
         </div>
         <div className="restaurant-item-city">{restaurant.city}</div>
+        <div className="restaurant-item-city">{restaurant.address}</div>
         <div className="review-container">
           <div className="reviewer-picture">picture</div>
           <div className="review">placeholder for review</div>
