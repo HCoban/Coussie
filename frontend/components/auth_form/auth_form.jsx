@@ -31,7 +31,7 @@ class AuthForm extends React.Component {
     e.preventDefault();
     let user;
     if (e.currentTarget.className.includes("guest")) {
-      user = {username: "user", password: "password"};
+      user = {username: "guest", password: "password"};
     } else {
       user = this.state;
     }
@@ -70,6 +70,12 @@ class AuthForm extends React.Component {
     } else {
       guestlogin = "";
     }
+    let errors;
+    if (this.props.errors) {
+      errors = <h3 className="errors">{this.props.errors}</h3>;
+    } else {
+      errors = <h3 className="errors"></h3>;
+    }
     return (
       <div className="auth-form-container">
         <form className="auth-form-box">
@@ -78,6 +84,7 @@ class AuthForm extends React.Component {
           <link></link>
           <input type="text" name="username" className="auth-input" placeholder="username" value={this.state.username} onChange={this.setInput} />
           <input type="password" name="password" className="auth-input" placeholder="password" value={this.state.password} onChange={this.setInput} />
+          {errors}
           <div className="auth-buttons">
             <button className="auth-button" onClick={this.submit}>{this.loginOrSignup()}</button>
             {guestlogin}

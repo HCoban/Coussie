@@ -19,9 +19,18 @@ class User < ActiveRecord::Base
     uniqueness: true
   validates :password, length: { minimum: 8, allow_nil: true }
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :ensure_picture_url
 
   attr_reader :password
+
+  has_many :restaurants,
+    primary_key: :id,
+    foreign_key: :owner_id,
+    class_name: :Restaurant
+
+  def ensure_picture_url
+    self.picture_url ||= "http://res.cloudinary.com/dguiepgvw/image/upload/c_crop,h_700,y_0/v1472687944/noun_138589_cc_rsfmug.png"
+  end
 
   def password=(password)
     @password = password

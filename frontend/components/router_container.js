@@ -5,6 +5,7 @@ const mapStateToProps = state => ({
   currentUser: state.session.currentUser
 });
 
+
 const AppRouterContainer = connect(
   mapStateToProps
 )(AppRouter);

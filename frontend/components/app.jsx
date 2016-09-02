@@ -6,7 +6,9 @@ const App = ({children}) => (
     <header>
       <NavbarContainer />
     </header>
-    {children}
+    <div className="content">
+      {children}
+    </div>
   </div>
 );
 

@@ -10,7 +10,7 @@ const SessionMiddleware = ({getState, dispatch }) => next => action => {
       logIn(action.user, successCallback, errorCallback);
       return next(action);
     case SessionConstants.LOGOUT:
-      logOut(() => (next));
+      logOut(() => (next(action)));
       break;
     case SessionConstants.SIGNUP:
       signUp(action.user, successCallback, errorCallback);
