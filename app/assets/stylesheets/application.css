@@ -43,6 +43,7 @@
    justify-content: space-between;
    width: 850px;
    background: #fff;
+
  }
 
  .auth-form-box {
@@ -123,19 +124,22 @@
   }
 
   .navbar {
-    background-color: red;
+    background-color: #f00;
     height: 60px;
-    padding: 2px 50px;
+    padding: 2px 350px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #ccc;
   }
 
-  .user-button {
-  }
 
   .user-button-icon {
     height: 60px;
     display: block;
+  }
+
+  .options > li {
+    display: none;
   }
 
   .logo-container {
@@ -162,4 +166,59 @@
 
   .content {
     background-color: white;
+    display: flex;
+    justify-content: center;
+  }
+
+  .restaurant-index-item {
+    background-color: gray;
+    height: 300px;
+    display: flex;
+  }
+
+  .restaurant-item-info {
+    /*float: left;*/
+  }
+
+  .restaurant-index-pic-container {
+    /*float: left;*/
+    display: block;
+    width: 200px;
+  }
+
+  .restaurant-index-pic {
+    width: 200px;
+  }
+
+  .restaurant-item-name {
+    display: block;
+  }
+
+  .restaurant-item-rating {
+    display: block;
+  }
+
+  .footer-container {
+    background-color: #eee;
+    height: 300px;
+    padding 2px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+  }
+
+  .footer-column {
+    padding: 70px;
+  }
+
+  .footer-column a {
+    font-size: 15px;
+    display: block;
+    padding-top: 15px;
+    color: #0073bb;
+  }
+
+  .footer-column h3 {
+    font-size: 18px;
+    color: #f00;
   }

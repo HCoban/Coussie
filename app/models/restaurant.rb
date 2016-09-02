@@ -22,4 +22,7 @@ class Restaurant < ActiveRecord::Base
   belongs_to :owner,
     class_name: :User
 
+  def average_rating
+    rand(5) + 1;
+  end
 end

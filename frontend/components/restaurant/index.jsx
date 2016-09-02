@@ -1,4 +1,5 @@
 import React from 'react';
+import RestaurantIndexItem from './index_item';
 
 class RestaurantIndex extends React.Component {
   constructor (props) {
@@ -7,10 +8,9 @@ class RestaurantIndex extends React.Component {
   render (){
     let restaurants = Object.keys(this.props.restaurants).map(key => {
       return (
-        <li key={key}>{this.props.restaurants[key].name}</li>
+        <RestaurantIndexItem restaurant={this.props.restaurants[key]} />
       );
     });
-    debugger
     return (
       <section className="restaurant-index">
         <ul>

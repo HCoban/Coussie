@@ -2,5 +2,9 @@
 
 
   @restaurants.each do |restaurant|
-    json.set! restaurant.id, restaurant
+    json.set! restaurant.id do
+      json.average_rating restaurant.average_rating
+      json.extract! restaurant, :name, :city, :lat, :lng, :category_id,
+        :owner_id, :website, :telephone, :price_range
+    end
   end

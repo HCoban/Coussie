@@ -1,7 +1,7 @@
 
 User.create(username: "guest", password: "password", picture_url: Faker::Avatar.image)
 
-20.times { User.create(username: Faker::Internet.user_name, password: Faker::Internet.password(8)), picture_url: Faker::Avatar.image }
+20.times { User.create(username: Faker::Internet.user_name, password: Faker::Internet.password(8), picture_url: Faker::Avatar.image) }
 
 Restaurant.create(name: "McKing's", city: "San Francisco", lat: 37.15, lng: 37.12, category_id: 4, owner_id: 3)
 Restaurant.create(name: "Sagalassos", city: "San Francisco", lat: 37.12, lng: 37.112, category_id: 1, owner_id: 1)

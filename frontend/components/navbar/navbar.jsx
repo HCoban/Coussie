@@ -18,6 +18,11 @@ class Navbar extends React.Component {
       return (
         <div className="user-button" onClick={this.logout}>
           <img src={this.props.currentUser.picture_url} className="user-button-icon"></img>
+          <ul className="options">
+            <li>"Option1"</li>
+            <li>"Option2"</li>
+            <li>"Option3"</li>
+          </ul>
         </div>
       );
     } else {
