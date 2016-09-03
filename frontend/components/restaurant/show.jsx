@@ -5,16 +5,24 @@ import ReviewShow from '../review/show';
 
 class RestaurantShow extends React.Component {
   componentDidMount () {
-    debugger
   }
   render () {
     let restaurant = this.props.restaurant;
-    let reviews;
-    if (this.props.restaurant.reviews) {
-      reviews = <ReviewShow review={this.props.restaurant.review}/>;
-    } else {
-      reviews = "";
-    }
+    let reviews = Object.keys(restaurant.reviews).map ((key) => {
+      let review = restaurant.reviews[key];
+
+      if (review.reviewer) {
+        return (
+          <ReviewShow reviewerpic={review.pic}
+            reviewer={review.reviewer}
+            vote={review.vote} description={review.description}/>
+        );
+      } else {
+        return (
+          <ReviewShow vote={review.vote} description={review.description}/>
+        );
+      }
+    });
     return (
       <div className="restaurant-show-container">
         <div className="restaurant-show">
