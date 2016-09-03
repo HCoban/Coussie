@@ -322,3 +322,28 @@
     justify-content: space-around;
     display: flex;
   }
+
+  .review-show {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .reviewer-pic {
+    width: 128px;
+    height: 128px;
+  }
+
+  .reviewer-details > li{
+    list-style: none;
+  }
+
+  .review-desc-container {
+    width: 550px;
+    list-style: none;
+    padding: 10px;
+  }
+
+  .review-header > span {
+    color: red;
+    font-size: 26px;
+  }
