@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
     foreign_key: :owner_id,
     class_name: :Restaurant
 
+  has_many :reviews,
+    foreign_key: :reviewer_id,
+    class_name: :Review
+
   def ensure_picture_url
     self.picture_url ||= "http://res.cloudinary.com/dguiepgvw/image/upload/c_crop,h_700,y_0/v1472687944/noun_138589_cc_rsfmug.png"
   end

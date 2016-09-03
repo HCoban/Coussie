@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
 import RestaurantMap from './restaurant_map';
-import RestaurantDetail from './detail';
+import ReviewShow from '../review/show';
 
 class RestaurantShow extends React.Component {
   componentDidMount () {
-
+    debugger
   }
   render () {
     let restaurant = this.props.restaurant;
@@ -29,6 +29,7 @@ class RestaurantShow extends React.Component {
           <img src={this.props.restaurant.image_url}></img>
           <img src={this.props.restaurant.image_url}></img>
         </div>
+        <ReviewShow review={this.props.restaurant.review}/>
       </div>
     );
   }

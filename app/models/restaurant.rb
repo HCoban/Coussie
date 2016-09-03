@@ -14,6 +14,8 @@
 #  price_range :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  address     :string
+#  image_url   :string
 #
 
 class Restaurant < ActiveRecord::Base
@@ -24,6 +26,9 @@ class Restaurant < ActiveRecord::Base
 
   belongs_to :owner,
     class_name: :User
+
+  has_many :reviews,
+    class_name: :Review
 
   def ensure_image_url
     self.image_url ||= "http://images.clipartpanda.com/restaurant-clipart-restaurant-building-clipart-great.jpg"
