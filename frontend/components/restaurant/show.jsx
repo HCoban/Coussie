@@ -13,7 +13,7 @@ class RestaurantShow extends React.Component {
 
       if (review.reviewer) {
         return (
-          <ReviewShow reviewerpic={review.pic}
+          <ReviewShow key={key} reviewerpic={review.pic}
             reviewer={review.reviewer}
             vote={review.vote} description={review.description}/>
         );

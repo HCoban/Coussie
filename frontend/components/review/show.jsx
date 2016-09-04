@@ -1,4 +1,5 @@
 import React from 'react';
+import NewReviewForm from './form';
 
 const ReviewShow = ({reviewerpic, reviewer, city, vote, description}) => {
   return (
@@ -13,7 +14,7 @@ const ReviewShow = ({reviewerpic, reviewer, city, vote, description}) => {
         </ul>
       </div>
       <div className="review-desc-container">
-        <li className="rating">{vote}</li>
+        <NewReviewForm vote={vote}/>
         <li className="description">{description}</li>
       </div>
     </div>
