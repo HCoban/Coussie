@@ -19,9 +19,8 @@ class NewReviewForm extends React.Component {
 
   navigateToRestaurantShow() {
     this.setState({
-      ["description"]: 0
-    }); 
-    debugger
+      ["description"]: ""
+    });
     const restaurantUrl = `/restaurants/${this.props.restaurantId}`;
     this.props.router.push(restaurantUrl);
   }
