@@ -374,10 +374,15 @@ header {
   margin: 0 auto;
 }
 
+.category-index {
+  float: left;
+  display: block;
+  width: 140px;
+}
+
 .category-index-item {
     width: 100px;
     display: block;
-    float: left;
   }
 
 .category-index-pic-container {
