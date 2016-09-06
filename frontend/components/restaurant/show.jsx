@@ -7,7 +7,7 @@ class RestaurantShow extends React.Component {
   componentDidMount () {
   }
   render () {
-    let restaurant = this.props.restaurant;
+    let restaurant = this.props.restaurant || {};
     let reviews = Object.keys(restaurant.reviews).map ((key) => {
       let review = restaurant.reviews[key];
 
@@ -23,6 +23,7 @@ class RestaurantShow extends React.Component {
         );
       }
     });
+
     return (
       <div className="restaurant-show-container">
         <div className="restaurant-show">

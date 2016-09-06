@@ -2,13 +2,14 @@ import React from 'react';
 import NavbarContainer from './navbar/navbar_container';
 import Footer from './footer/footer';
 
-const App = ({children}) => (
+const App = ({main, sidebar, children}) => (
   <div>
     <header>
       <NavbarContainer />
     </header>
     <div className="content">
-      {children}
+      {sidebar}
+      {main || children}
     </div>
     <footer>
       <Footer />

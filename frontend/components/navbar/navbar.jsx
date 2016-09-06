@@ -28,7 +28,9 @@ class Navbar extends React.Component {
     } else {
       return (
         <div className="user-button logged-out">
-          <Link to="/login">Login</Link>
+          <Link className="user-button-icon logged-out" to="/login">
+            <img src={"http://res.cloudinary.com/dguiepgvw/image/upload/v1473111262/noun_310151_cc_jyfmyt.png"}></img>
+          </Link>
         </div>
       );
     }

@@ -4,5 +4,6 @@ Rails.application.routes.draw do
     resources :users
     resource :session
     resources :restaurants
+    resources :categories, only: [:index, :show]
   end
 end

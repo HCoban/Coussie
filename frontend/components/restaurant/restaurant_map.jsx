@@ -6,7 +6,7 @@ class RestaurantMap extends React.Component {
     const mapDOMNode = this.refs.map;
 
     const mapOptions = {
-      center: {lat: this.props.restaurant.lat, lng: this.props.restaurant.lng}, zoom: 13
+      center: {lat: this.props.restaurant.lat || 37.791535, lng: this.props.restaurant.lng ||-122.392840}, zoom: 13
     };
 
     this.map = new google.maps.Map(mapDOMNode, mapOptions);
@@ -18,9 +18,6 @@ class RestaurantMap extends React.Component {
 
   }
 
-  componentDidUpdate () {
-    this.markerManager.updateMarkers(this.props.benches);
-  }
 
   render () {
     return (

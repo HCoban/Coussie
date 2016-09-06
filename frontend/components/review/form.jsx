@@ -1,7 +1,7 @@
 import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
-class NewReviewForm extends React.Component {
+class StarRating extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,4 +29,4 @@ class NewReviewForm extends React.Component {
   }
 }
 
-export default NewReviewForm;
+export default StarRating;

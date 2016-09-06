@@ -3,28 +3,31 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import App from '../app';
 import AuthFormContainer from '../auth_form/auth_form_container';
 import RestaurantIndexContainer from '../restaurant/index_container';
+import CategoryIndexContainer from '../category/index_container';
 import * as RestaurantActions from '../../actions/restaurant_actions';
+import * as CategoryActions from '../../actions/category_actions';
 import RestaurantShowContainer from '../restaurant/show_container';
 import NewReviewForm from '../review/form';
 
 class AppRouter extends React.Component {
   constructor(props) {
     super(props);
-    this.requestAllRestaurantsOnEnter = this.requestAllRestaurantsOnEnter.bind(this);
+    this.requestData = this.requestData.bind(this);
   }
 
-  requestAllRestaurantsOnEnter () {
+  requestData () {
     this.props.dispatch(RestaurantActions.requestAllRestaurants());
+    this.props.dispatch(CategoryActions.requestAllCategories());
   }
 
   render() {
     return (
       <Router history={hashHistory}>
-        <Route path="/" component={App}>
-          <IndexRoute component={RestaurantIndexContainer} onEnter={this.requestAllRestaurantsOnEnter}/>
+        <Route path="/" component={App} onEnter={this.requestData}>
+          <IndexRoute components={{main: RestaurantIndexContainer, sidebar: CategoryIndexContainer}} />
           <Route path="/signup" component={AuthFormContainer} />
           <Route path="/login" component={AuthFormContainer} />
-          <Route path="/restaurants" component={RestaurantIndexContainer} onEnter={this.requestAllRestaurantsOnEnter}/>
+          <Route path="/restaurants" component={RestaurantIndexContainer} />
           <Route path="/restaurants/:restaurantId" component={RestaurantShowContainer}>
           </Route>
           <Route path="/review" component={NewReviewForm} />
