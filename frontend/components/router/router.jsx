@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import { Router, Route, hashHistory, IndexRoute, withRouter } from 'react-router';
 import App from '../app';
 import AuthFormContainer from '../auth_form/auth_form_container';
 import RestaurantIndexContainer from '../restaurant/index_container';
@@ -12,11 +12,18 @@ class AppRouter extends React.Component {
   constructor(props) {
     super(props);
     this.requestData = this.requestData.bind(this);
+    this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
   }
 
   requestData () {
     this.props.dispatch(RestaurantActions.requestAllRestaurants());
     this.props.dispatch(CategoryActions.requestAllCategories());
+  }
+
+  redirectIfLoggedOut () {
+    if (!this.props.currentUser) {
+      this.props.router.push("/");
+    }
   }
 
   render() {
@@ -38,4 +45,4 @@ class AppRouter extends React.Component {
   }
 }
 
-export default AppRouter;
+export default withRouter(AppRouter);

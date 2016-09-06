@@ -1,5 +1,5 @@
 import React from 'react';
-import StarRating from './star_rating';
+import StarRatingComponent from 'react-star-rating-component';
 
 const ReviewShow = ({reviewerpic, reviewer, city, vote, description}) => {
   return (
@@ -14,7 +14,7 @@ const ReviewShow = ({reviewerpic, reviewer, city, vote, description}) => {
         </ul>
       </div>
       <div className="review-desc-container">
-        <StarRating vote={vote} editing={false}/>
+        <StarRatingComponent name="vote" editing={false} starCount={5} value={vote}/>
         <li className="description">{description}</li>
       </div>
     </div>

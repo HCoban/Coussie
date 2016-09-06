@@ -1,6 +1,6 @@
 import React from 'react';
 import { hashHistory, withRouter } from 'react-router';
-import StarRating from './star_rating';
+import StarRatingComponent from 'react-star-rating-component';
 
 class NewReviewForm extends React.Component {
   constructor(props) {
@@ -9,6 +9,7 @@ class NewReviewForm extends React.Component {
     this.navigateToRestaurantShow = this.navigateToRestaurantShow.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.onStarClick = this.onStarClick.bind(this);
   }
 
   handleSubmit(e) {
@@ -33,6 +34,12 @@ class NewReviewForm extends React.Component {
     };
   }
 
+  onStarClick(nextValue, prevValue, name) {
+    this.setState({
+      "vote": nextValue
+    });
+  }
+
   render() {
     return (
       <div className="review-show">
@@ -47,7 +54,7 @@ class NewReviewForm extends React.Component {
         </div>
         <div className="review-desc-container">
           <form className="-new-review-form" onSubmit={this.handleSubmit}>
-            <StarRating vote={this.state.vote} editing={true}/>
+            <StarRatingComponent name="vote" value={this.state.vote} editing={true} onStarClick={this.onStarClick}/>
             <li className="description">
               <textarea onChange={this.update("description")} value={this.state.description} cols="55" rows="10" placeholder="your review here" className="input-description"></textarea>
             </li>
