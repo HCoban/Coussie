@@ -15,8 +15,11 @@ class RestaurantMap extends React.Component {
 
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.createMarkerFromRestaurant(this.props.restaurant);
-
   }
+
+  // componentDidUpdate() {
+  //   this.map.setCenter({lat: this.props.restaurant.lat, lng: this.props.restaurant.lng})
+  // }
 
 
   render () {

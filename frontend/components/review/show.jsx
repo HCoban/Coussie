@@ -1,5 +1,5 @@
 import React from 'react';
-import StarRating from './form';
+import StarRating from './star_rating';
 
 const ReviewShow = ({reviewerpic, reviewer, city, vote, description}) => {
   return (
@@ -14,7 +14,7 @@ const ReviewShow = ({reviewerpic, reviewer, city, vote, description}) => {
         </ul>
       </div>
       <div className="review-desc-container">
-        <StarRating vote={vote}/>
+        <StarRating vote={vote} editing={false}/>
         <li className="description">{description}</li>
       </div>
     </div>

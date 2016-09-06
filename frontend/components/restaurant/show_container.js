@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     restaurantId,
-    restaurant
+    restaurant,
+    currentUser: state.session.currentUser
   };
 };
 

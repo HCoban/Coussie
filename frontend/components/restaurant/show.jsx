@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import RestaurantMap from './restaurant_map';
 import ReviewShow from '../review/show';
+import NewReviewFormContainer from '../review/form_container';
 
 class RestaurantShow extends React.Component {
   componentDidMount () {
@@ -23,7 +24,12 @@ class RestaurantShow extends React.Component {
         );
       }
     });
-
+    let newReview;
+    if (this.props.currentUser) {
+      newReview = <NewReviewFormContainer restaurantId={this.props.restaurantId}/>;
+    } else {
+      newReview = "";
+    }
     return (
       <div className="restaurant-show-container">
         <div className="restaurant-show">
@@ -48,6 +54,7 @@ class RestaurantShow extends React.Component {
         </div>
         <div className="restaurant-review">
           <span>Reviews</span>
+          {newReview}
           {reviews}
         </div>
       </div>

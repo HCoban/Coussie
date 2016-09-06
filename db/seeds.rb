@@ -1,5 +1,5 @@
 
-User.create(username: "guest", password: "password", picture_url: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAeFAAAAJDg2Y2U4NjQ3LTk1NmYtNGU0ZC04NzQ5LWI3ZGIyOWI1MTdkZA.jpg")
+User.create(username: "guest", password: "password", picture_url: "https://randomuser.me/api/portraits/women/58.jpg")
 User.create(username: "gallardo", password: "password", picture_url: "https://randomuser.me/api/portraits/men/99.jpg")
 User.create(username: "eva", password: "password", picture_url: "https://randomuser.me/api/portraits/women/44.jpg")
 User.create(username: "neusa", password: "password", picture_url: "https://randomuser.me/api/portraits/women/51.jpg")

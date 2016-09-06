@@ -5,3 +5,12 @@ export const fetchAllRestaurants = (success) => {
     success
   });
 };
+
+export const createReview = (data, success) => {
+  $.ajax({
+    method: "POST",
+    url: "api/reviews",
+    data: data,
+    success
+  });
+};

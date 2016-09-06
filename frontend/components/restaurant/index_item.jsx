@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router';
-import StarRating from '../review/form';
+import StarRating from '../review/star_rating';
 
 
 const RestaurantIndexItem = ({restaurant, router}) => {

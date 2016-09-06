@@ -395,3 +395,22 @@ header {
   display: block;
   width: 100%;
 }
+
+.input-description {
+  background-color: #eee;
+  padding: 10px;
+}
+
+.reviewer-info {
+  width: 128px;
+}
+
+.review-desc-container > input {
+  border: 1px solid #a9a9a9;
+  background-color: red;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2px;
+  color: white;
+  width: 90px;
+}

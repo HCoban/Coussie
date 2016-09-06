@@ -1,5 +1,5 @@
 import { RestaurantConstants, receiveAllRestaurants } from '../actions/restaurant_actions';
-import { fetchAllRestaurants } from '../util/restaurant_util';
+import { fetchAllRestaurants, createReview } from '../util/restaurant_util';
 
 
 const RestaurantMiddleware = ({dispatch}) => next => action => {
@@ -9,6 +9,8 @@ const RestaurantMiddleware = ({dispatch}) => next => action => {
     case RestaurantConstants.REQUEST_ALL_RESTAURANTS:
       fetchAllRestaurants(receiveAllRestaurantSuccess);
       return next(action);
+    case RestaurantConstants.CREATE_REVIEW:
+      return createReview(action.review, receiveAllRestaurantSuccess);
     default:
       return next(action);
 
