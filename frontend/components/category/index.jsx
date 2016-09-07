@@ -12,10 +12,12 @@ class CategoryIndex extends React.Component {
       );
     });
     return (
-      <section className="category-index">
+      <section className="category-index-container">
         <ul>
-          <span>Categories</span>
-          {categories}
+          <span className="category-index-title"></span>
+          <div className="category-index">
+            {categories}
+          </div>
         </ul>
       </section>
     );

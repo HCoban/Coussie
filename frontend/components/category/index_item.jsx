@@ -17,7 +17,7 @@ class CategoryIndexItem extends React.Component {
     return (
       <div value={this.props.category.id} className="category-index-item" onClick={this.showSingleCategory}>
         <div className="category-index-pic-container">
-          <img src="http://res.cloudinary.com/dguiepgvw/image/upload/v1473101720/noun_105639_cc_rktwjz.png"></img>
+          <img src={this.props.category.image_url}></img>
         </div>
         <div className="category-title">
           <h2>{this.props.category.title}</h2>

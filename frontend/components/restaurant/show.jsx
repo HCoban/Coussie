@@ -42,14 +42,15 @@ class RestaurantShow extends React.Component {
             </div>
           </div>
           <div className="show-column-2">
-            <img src={this.props.restaurant.image_url}></img>
-            <img src={this.props.restaurant.image_url}></img>
-            <img src={this.props.restaurant.image_url}></img>
-            <img src={this.props.restaurant.image_url}></img>
-            <img src={this.props.restaurant.image_url}></img>
-            <img src={this.props.restaurant.image_url}></img>
-            <img src={this.props.restaurant.image_url}></img>
-            <img src={this.props.restaurant.image_url}></img>
+            <div className="restaurant-show-image-container">
+              <img src={this.props.restaurant.image_url}></img>
+            </div>
+            <div className="restaurant-show-image-container">
+              <img src={this.props.restaurant.image_url}></img>
+            </div>
+            <div className="restaurant-show-image-container">
+              <img src={this.props.restaurant.image_url}></img>
+            </div>
           </div>
         </div>
         <div className="restaurant-review">

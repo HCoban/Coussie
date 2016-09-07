@@ -30,7 +30,7 @@ class AppRouter extends React.Component {
     return (
       <Router history={hashHistory}>
         <Route path="/" component={App} onEnter={this.requestData}>
-          <IndexRoute components={{main: RestaurantIndexContainer, sidebar: CategoryIndexContainer}} onEnter={this.redirectIfLoggedOut}/>
+          <IndexRoute components={{main: RestaurantIndexContainer, sidebar: CategoryIndexContainer}} />
           <Route path="/signup" component={AuthFormContainer} />
           <Route path="/login" component={AuthFormContainer} />
           <Route path="/restaurants" component={RestaurantIndexContainer} />
