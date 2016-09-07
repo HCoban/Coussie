@@ -55,7 +55,7 @@ class Navbar extends React.Component {
     return (
     <div className="search-box">
       Find
-      <input type="text" name="search" className="search" placeholder="burittos, burgers, Greek" value={this.state.search} onChange={this.setSearch}></input>
+      <input type="text" name="search" className="search" placeholder="Pizza, Oakland" value={this.state.search} onChange={this.setSearch}></input>
     </div>
     );
   }

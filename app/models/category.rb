@@ -6,6 +6,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  title      :string
+#  image_url  :string
 #
 
 class Category < ActiveRecord::Base
