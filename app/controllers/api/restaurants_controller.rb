@@ -1,7 +1,12 @@
 
 class Api::RestaurantsController < ApplicationController
   def index
-    @restaurants = Restaurant.all
+    if params[:query]
+      condition = "%#{params[:query]}%"
+      @restaurants = Restaurant.where("name LIKE ? OR city LIKE ?", condition, condition)
+    else
+      @restaurants = Restaurant.all
+    end
     render :index
   end
 

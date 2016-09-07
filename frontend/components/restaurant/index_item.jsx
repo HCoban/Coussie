@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router';
-import StarRating from '../review/star_rating';
+import StarRatingComponent from 'react-star-rating-component';
 
 
 const RestaurantIndexItem = ({restaurant, router}) => {
@@ -16,7 +16,7 @@ const RestaurantIndexItem = ({restaurant, router}) => {
       <div className="restaurant-item-info">
         <Link to={link} className="restaurant-item-name">{restaurant.name}</Link>
         <div className="restaurant-item-rating">
-          <StarRating vote={restaurant.average_rating}/>
+          <StarRatingComponent name="vote" editing={false} value={restaurant.average_rating}/>
         </div>
         <div className="restaurant-item-city">{restaurant.city}</div>
         <div className="restaurant-item-city">{restaurant.address}</div>

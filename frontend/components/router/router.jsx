@@ -20,9 +20,9 @@ class AppRouter extends React.Component {
     this.props.dispatch(CategoryActions.requestAllCategories());
   }
 
-  redirectIfLoggedOut () {
+  redirectIfLoggedOut (nextState, replace) {
     if (!this.props.currentUser) {
-      this.props.router.push("/");
+      replace("/login");
     }
   }
 
@@ -30,7 +30,7 @@ class AppRouter extends React.Component {
     return (
       <Router history={hashHistory}>
         <Route path="/" component={App} onEnter={this.requestData}>
-          <IndexRoute components={{main: RestaurantIndexContainer, sidebar: CategoryIndexContainer}} />
+          <IndexRoute components={{main: RestaurantIndexContainer, sidebar: CategoryIndexContainer}} onEnter={this.redirectIfLoggedOut}/>
           <Route path="/signup" component={AuthFormContainer} />
           <Route path="/login" component={AuthFormContainer} />
           <Route path="/restaurants" component={RestaurantIndexContainer} />

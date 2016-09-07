@@ -14,3 +14,12 @@ export const createReview = (data, success) => {
     success
   });
 };
+
+export const fetchFilteredRestaurants = (data, success) => {
+  $.ajax({
+    method: "GET",
+    url: "api/restaurants",
+    data: data,
+    success
+  });
+};

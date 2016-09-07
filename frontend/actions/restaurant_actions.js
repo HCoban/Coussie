@@ -1,7 +1,8 @@
 export const RestaurantConstants = {
   REQUEST_ALL_RESTAURANTS: "REQUEST_ALL_RESTAURANTS",
   RECEIVE_ALL_RESTAURANTS: "RECEIVE_ALL_RESTAURANTS",
-  CREATE_REVIEW: "CREATE_REVIEW"
+  CREATE_REVIEW: "CREATE_REVIEW",
+  FILTER: "FILTER"
 };
 
 export const requestAllRestaurants = () => ({
@@ -16,4 +17,9 @@ export const receiveAllRestaurants = (restaurants) => ({
 export const createReview = (review) => ({
   type: RestaurantConstants.CREATE_REVIEW,
   review
+});
+
+export const filter = (query) => ({
+  type: RestaurantConstants.FILTER,
+  query
 });

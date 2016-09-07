@@ -35,9 +35,11 @@ class NewReviewForm extends React.Component {
   }
 
   onStarClick(nextValue, prevValue, name) {
-    this.setState({
-      "vote": nextValue
-    });
+    if (name === "newVote") {
+      this.setState({
+        "vote": nextValue
+      });
+    }
   }
 
   render() {
@@ -54,7 +56,7 @@ class NewReviewForm extends React.Component {
         </div>
         <div className="review-desc-container">
           <form className="-new-review-form" onSubmit={this.handleSubmit}>
-            <StarRatingComponent name="vote" value={this.state.vote} editing={true} onStarClick={this.onStarClick}/>
+            <StarRatingComponent name="newVote" value={this.state.vote} editing={true} onStarClick={this.onStarClick}/>
             <li className="description">
               <textarea onChange={this.update("description")} value={this.state.description} cols="55" rows="10" placeholder="your review here" className="input-description"></textarea>
             </li>

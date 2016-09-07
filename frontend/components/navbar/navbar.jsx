@@ -39,21 +39,23 @@ class Navbar extends React.Component {
   logout(e) {
     e.preventDefault();
     this.props.logOut();
-    // return (
-    //   ReactDOM.render(<Options/>, e.currentTarget)
-    // );
   }
 
   setSearch (e) {
     e.preventDefault();
-    this.setState({["search"]: e.currentTarget.value});
+    this.setState({[e.currentTarget.name]: e.currentTarget.value}, this.filterRestaurants);
+  }
+
+  filterRestaurants () {
+    let filter = this.state.search;
+    this.props.filter({query: filter});
   }
 
   searchBox () {
     return (
     <div className="search-box">
       Find
-      <input type="text" className="search" placeholder="burittos, burgers, Greek" value={this.state.search} onChange={this.setSearch}></input>
+      <input type="text" name="search" className="search" placeholder="burittos, burgers, Greek" value={this.state.search} onChange={this.setSearch}></input>
     </div>
     );
   }
