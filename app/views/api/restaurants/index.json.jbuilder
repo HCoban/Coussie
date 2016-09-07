@@ -16,7 +16,7 @@
       json.images do
         restaurant.images.each do |image|
           json.set! image.id do
-            json.image_url = image.image_url
+            json.image_url image.image_url
           end
         end
       end

@@ -5,7 +5,13 @@ User.create(username: "eva", password: "password", picture_url: "https://randomu
 User.create(username: "neusa", password: "password", picture_url: "https://randomuser.me/api/portraits/women/51.jpg")
 User.create(username: "cassandre", password: "password", picture_url: "https://randomuser.me/api/portraits/women/21.jpg")
 
-images = {american: ["https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/w1000-120ppiphoto-1458677677220-000ddaa037e3_1_j0xe2s.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272585/photo-1470343740979-20b904b850da_pvoyem.jpg", "http://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1432752641289-a25fc853fceb_wqttzh.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1429012178110-d7a734a56176_lk8uje.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1426259759666-68da5c54402d_nupfdy.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272579/photo-1416772472542-01fdd961f986_prxpqp.jpg"]}
+images = {
+  american: ["https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/w1000-120ppiphoto-1458677677220-000ddaa037e3_1_j0xe2s.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272585/photo-1470343740979-20b904b850da_pvoyem.jpg", "http://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1432752641289-a25fc853fceb_wqttzh.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1429012178110-d7a734a56176_lk8uje.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1426259759666-68da5c54402d_nupfdy.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272579/photo-1416772472542-01fdd961f986_prxpqp.jpg"],
+  asian: ["https://res.cloudinary.com/dguiepgvw/image/upload/v1473280986/photo-1447129568466-afbabc829d86_ixqfrb.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473280988/photo-1470256699805-a29e1b58598a_joyvit.jpg"],
+  german: ["https://res.cloudinary.com/dguiepgvw/image/upload/v1473281264/aXpQLs4AQ5e1EtmeYkz3_20140524_124026_h2nbg7.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281264/unsplash_527bf4b4ae00d_1_ftnuqy.jpg"],
+  greek: ["https://res.cloudinary.com/dguiepgvw/image/upload/v1473281256/photo-1414358154612-ae3d3c120004_znqtid.jpg"],
+  italian: ["https://res.cloudinary.com/dguiepgvw/image/upload/v1473281413/photo-1445116572660-236099ec97a0_swmywk.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281413/photo-1469307580733-007134b82100_klanr0.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281413/photo-1471691170738-9c6b554ebec1_gjlpwc.jpg"]
+}
 restaurant_categories = [:greek, :italian, :american, :german, :asian]
 
 for category in restaurant_categories
@@ -14,7 +20,7 @@ for category in restaurant_categories
     image_count = rand(1..(current_images.count))
 
     image_count.times do
-      Image.create(restaurant_id: 1, image_url: current_images.shuffle!.pop)
+      Image.create(restaurant_id: restaurant_categories.index(category)+1, image_url: current_images.shuffle!.pop)
       break if current_images.empty?
     end
   end
@@ -46,14 +52,12 @@ Restaurant.create(name: "Burger World", city: "Palo Alto", lat: 37.428247, lng: 
 Restaurant.create(name: "Bahnhof", city: "Oakland", lat: 37.808823, lng: -122.294740, category_id: 4, owner_id: 1, address: "1020 Chester Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847722/photo-1469234496837-d0101f54be3e_srh39o.jpg")
 Restaurant.create(name: "Wok", city: "San Francisco", lat: 37.764161, lng: -122.464493, category_id: 5, owner_id: 1, address: "Irving St & 7th Ave", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472855378/photo-1470256699805-a29e1b58598a_ucyhud.jpg")
 
-reviewer_id = rand(5) + 1
-vote = rand(1..5)
 restaurant_id = 1
 description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies fringilla efficitur. Vestibulum purus dolor, finibus efficitur placerat et, consequat at nunc. Proin ullamcorper justo sed eleifend lacinia. Mauris aliquet ex dolor, eu imperdiet felis fermentum vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tempor metus eget neque malesuada tincidunt at et urna. Suspendisse vel ex velit. Etiam nunc sem, porttitor ut magna a, pulvinar commodo nisi. Nunc efficitur arcu nec ipsum faucibus, et blandit libero pellentesque.\nNam porta lacus sed libero rhoncus condimentum. Ut dui orci, pellentesque vitae lectus sed, varius gravida urna. Nullam sed erat augue. Maecenas aliquet sapien erat, non dictum dolor ullamcorper id. Pellentesque pulvinar ullamcorper purus, et feugiat mi elementum nec. Sed pharetra erat sed risus sodales, id iaculis lacus gravida. Sed vulputate auctor elit, id mollis arcu gravida eget. Morbi a ligula sed enim semper condimentum. Donec quis purus orci. Cras sollicitudin enim non ex porta suscipit. Nulla eu sem eget nisl efficitur bibendum. Integer volutpat nibh gravida cursus varius. Pellentesque consequat molestie tristique. Cras varius ultricies nibh vel efficitur."
 
 while restaurant_id <= 14
   rand(3..15).times do
-    Review.create(reviewer_id: reviewer_id, restaurant_id: restaurant_id, vote: vote, description: description)
+    Review.create(reviewer_id: (rand(5) + 1), restaurant_id: restaurant_id, vote: rand(1..5), description: description)
   end
   restaurant_id += 1
 end

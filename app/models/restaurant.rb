@@ -39,6 +39,10 @@ class Restaurant < ActiveRecord::Base
   end
 
   def average_rating
-    rand(5) + 1;
+    votes = 0
+    for review in self.reviews
+      votes += review.vote
+    end
+    votes / self.reviews.count
   end
 end

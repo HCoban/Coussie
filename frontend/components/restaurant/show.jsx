@@ -15,13 +15,14 @@ class RestaurantShow extends React.Component {
     this._imageGallery.pause();
   }
 
-  componentDidMount () {
+  componentDidUpdate () {
+
   }
 
   render () {
 
     let restaurant = this.props.restaurant || {};
-    debugger
+
     let reviews = Object.keys(restaurant.reviews).map ((key) => {
       let review = restaurant.reviews[key];
 
@@ -38,25 +39,16 @@ class RestaurantShow extends React.Component {
       }
     });
 
-    let image_url = this.props.restaurant.image_url;
+    debugger
+    let image_urls = Object.keys(this.props.restaurant.images).map (key => {
+      return this.props.restaurant.images[key];
+    });
 
+    let images = [];
 
-    const images = [
-      {
-        original: image_url,
-        thumbnail: image_url
-      },
-      {
-        original: image_url,
-        thumbnail: image_url
-      },
-      {
-        original: image_url,
-        thumbnail: image_url
-      }
-    ];
-
-
+    image_urls.forEach (image_url => {
+      images.push({original: image_url.image_url, thumbnail: image_url.image_url});
+    });
 
     let newReview;
     if (this.props.currentUser) {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => {
   const restaurantId = parseInt(ownProps.params.restaurantId);
-  const restaurant = state.restaurants[restaurantId] || {reviews: {}};
+  const restaurant = state.restaurants[restaurantId] || {reviews: {}, images: {}};
 
   return {
     restaurantId,
