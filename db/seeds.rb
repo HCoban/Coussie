@@ -5,18 +5,44 @@ User.create(username: "eva", password: "password", picture_url: "https://randomu
 User.create(username: "neusa", password: "password", picture_url: "https://randomuser.me/api/portraits/women/51.jpg")
 User.create(username: "cassandre", password: "password", picture_url: "https://randomuser.me/api/portraits/women/21.jpg")
 
+images = {american: ["https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/w1000-120ppiphoto-1458677677220-000ddaa037e3_1_j0xe2s.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272585/photo-1470343740979-20b904b850da_pvoyem.jpg", "http://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1432752641289-a25fc853fceb_wqttzh.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1429012178110-d7a734a56176_lk8uje.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1426259759666-68da5c54402d_nupfdy.jpg", "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272579/photo-1416772472542-01fdd961f986_prxpqp.jpg"]}
+restaurant_categories = [:greek, :italian, :american, :german, :asian]
+
+for category in restaurant_categories
+  if images[category]
+    current_images = images[category].dup
+    image_count = rand(1..(current_images.count))
+
+    image_count.times do
+      Image.create(restaurant_id: 1, image_url: current_images.shuffle!.pop)
+      break if current_images.empty?
+    end
+  end
+end
+
+
+#greek restaurants
 Restaurant.create(name: "Sagalassos", city: "San Francisco", lat: 37.754699, lng: -122.441700, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
 Restaurant.create(name: "Helena", city: "San Francisco", lat: 37.800791, lng: -122.405737, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
 Restaurant.create(name: "Athens", city: "San Francisco", lat: 37.807530, lng: -122.422807, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+
+#italian restaurants
 Restaurant.create(name: "Greek Culture", city: "San Francisco", lat: 37.754699, lng: -122.441700, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
 Restaurant.create(name: "Sirtaki", city: "Berkeley", lat: 37.873793, lng: -122.289557, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
 Restaurant.create(name: "Va Chitarra", city: "Berkeley", lat: 37.878960, lng: -122.263374, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+
+#american restaurants
 Restaurant.create(name: "Pizza Paradise", city: "San Francisco", lat: 37.786916, lng: -122.459809, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
 Restaurant.create(name: "Venezia", city: "San Francisco", lat: 37.739749, lng: -122.482031, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+Restaurant.create(name: "Venezia", city: "San Francisco", lat: 37.719749, lng: -122.442031, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+
+#german restaurants
 Restaurant.create(name: "Pizza and Pasta", city: "San Francisco", lat: 37.752771, lng: -122.490329, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
 Restaurant.create(name: "Sicilian Pizza", city: "Palo Alto", lat: 37.442956, lng: -122.156636, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
-Restaurant.create(name: "McKing's", city: "San Francisco", lat: 37.772782, lng: -122.417835, category_id: 3, owner_id: 1, address: "81 S Van Ness A", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847716/photo-1458677677220-000ddaa037e3_akqzgo.jpg")
-Restaurant.create(name: "Burger World", city: "Palo Alto", lat: 37.428247, lng: -122.130509, category_id: 3, owner_id: 1, address: "Matadero Canal", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472855509/photo-1416772472542-01fdd961f986_atre8i.jpg")
+Restaurant.create(name: "McKing's", city: "San Francisco", lat: 37.772782, lng: -122.417835, category_id: 3, owner_id: 1, address: "81 S Van Ness A", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1426259759666-68da5c54402d_nupfdy.jpg")
+
+#asian restaurants
+Restaurant.create(name: "Burger World", city: "Palo Alto", lat: 37.428247, lng: -122.130509, category_id: 3, owner_id: 1, address: "Matadero Canal", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/w1000-120ppiphoto-1458677677220-000ddaa037e3_1_j0xe2s.jpg")
 Restaurant.create(name: "Bahnhof", city: "Oakland", lat: 37.808823, lng: -122.294740, category_id: 4, owner_id: 1, address: "1020 Chester Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847722/photo-1469234496837-d0101f54be3e_srh39o.jpg")
 Restaurant.create(name: "Wok", city: "San Francisco", lat: 37.764161, lng: -122.464493, category_id: 5, owner_id: 1, address: "Irving St & 7th Ave", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472855378/photo-1470256699805-a29e1b58598a_ucyhud.jpg")
 

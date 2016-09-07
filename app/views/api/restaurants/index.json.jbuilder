@@ -13,6 +13,13 @@
           end
         end
       end
+      json.images do
+        restaurant.images.each do |image|
+          json.set! image.id do
+            json.image_url = image.image_url
+          end
+        end
+      end
       json.extract! restaurant, :id, :name, :city, :lat, :lng, :category_id,
         :owner_id, :website, :telephone, :price_range, :address, :image_url
     end

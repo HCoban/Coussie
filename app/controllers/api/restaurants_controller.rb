@@ -3,7 +3,7 @@ class Api::RestaurantsController < ApplicationController
   def index
     if params[:query]
       condition = "%#{params[:query]}%"
-      @restaurants = Restaurant.where("name LIKE ? OR city LIKE ?", condition, condition)
+      @restaurants = Restaurant.where("name ILIKE ? OR city ILIKE ?", condition, condition)
     else
       @restaurants = Restaurant.all
     end

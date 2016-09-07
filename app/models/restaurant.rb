@@ -32,6 +32,8 @@ class Restaurant < ActiveRecord::Base
 
   belongs_to :category
 
+  has_many :images
+
   def ensure_image_url
     self.image_url ||= "http://images.clipartpanda.com/restaurant-clipart-restaurant-building-clipart-great.jpg"
   end
