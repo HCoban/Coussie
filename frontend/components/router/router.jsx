@@ -16,8 +16,8 @@ class AppRouter extends React.Component {
   }
 
   requestData () {
-    this.props.dispatch(RestaurantActions.requestAllRestaurants());
-    this.props.dispatch(CategoryActions.requestAllCategories());
+    this.context.store.dispatch(RestaurantActions.requestAllRestaurants());
+    this.context.store.dispatch(CategoryActions.requestAllCategories());
   }
 
   redirectIfLoggedOut (nextState, replace) {

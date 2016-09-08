@@ -1,11 +1,11 @@
 import { Provider } from 'react-redux';
 import React from 'react';
-import AppRouterContainer from './router/router_container';
+import AppRouter from './router/router';
 
 const Root = ({store}) => {
   return (
     <Provider store={store}>
-      <AppRouterContainer />
+      <AppRouter />
     </Provider>
   );
 };

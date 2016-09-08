@@ -60,7 +60,7 @@ class NewReviewForm extends React.Component {
             <li className="description">
               <textarea onChange={this.update("description")} value={this.state.description} cols="55" rows="10" placeholder="your review here" className="input-description"></textarea>
             </li>
-            <input type="submit" value="Submit"></input>
+            <input className="new-review-submit" type="submit" value="Submit"></input>
           </form>
         </div>
       </div>
