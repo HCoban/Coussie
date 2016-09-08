@@ -18,7 +18,8 @@ const RestaurantIndexItem = ({restaurant, router}) => {
   return (
     <div className="restaurant-index-item">
       <div className="restaurant-index-pic-container">
-        <img className="restaurant-item-pic" src={ mainPic || restaurant.image_url}/>
+        <Link to={link}><img className="restaurant-item-pic" src={ mainPic || restaurant.image_url} /></Link>
+        
       </div>
       <div className="restaurant-item-info">
         <Link to={link} className="restaurant-item-name">{restaurant.name}</Link>
