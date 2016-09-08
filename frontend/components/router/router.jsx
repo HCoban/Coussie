@@ -21,8 +21,7 @@ class AppRouter extends React.Component {
   }
 
   redirectIfLoggedOut (nextState, replace) {
-    debugger
-    if (!this.props.currentUser) {
+    if (!this.context.store.getState().session.currentUser) {
       replace("/login");
     }
   }
@@ -46,4 +45,6 @@ class AppRouter extends React.Component {
   }
 }
 
-export default withRouter(AppRouter);
+AppRouter.contextTypes = { store: React.PropTypes.object };
+
+export default AppRouter;

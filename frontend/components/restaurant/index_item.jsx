@@ -8,10 +8,17 @@ const RestaurantIndexItem = ({restaurant, router}) => {
   let reviewKeys = Object.keys(restaurant.reviews);
   let lastReviewIndex = reviewKeys[reviewKeys.length-1];
   let link = `/restaurants/${restaurant.id}`;
+  let mainPic;
+  if (restaurant.images) {
+    let key = Object.keys(restaurant.images)[0];
+    mainPic = restaurant.images[key].image_url;
+  } else {
+    mainPic = undefined;
+  }
   return (
     <div className="restaurant-index-item">
       <div className="restaurant-index-pic-container">
-        <img className="restaurant-item-pic" src={restaurant.image_url}/>
+        <img className="restaurant-item-pic" src={ mainPic || restaurant.image_url}/>
       </div>
       <div className="restaurant-item-info">
         <Link to={link} className="restaurant-item-name">{restaurant.name}</Link>

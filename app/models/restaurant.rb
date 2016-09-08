@@ -43,6 +43,10 @@ class Restaurant < ActiveRecord::Base
     for review in self.reviews
       votes += review.vote
     end
-    votes / self.reviews.count
+    if self.reviews.count>0
+      return votes / self.reviews.count
+    else
+      return 0
+    end
   end
 end

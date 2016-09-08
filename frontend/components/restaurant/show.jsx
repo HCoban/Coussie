@@ -22,8 +22,11 @@ class RestaurantShow extends React.Component {
   render () {
 
     let restaurant = this.props.restaurant || {};
+    let reviewKeys = Object.keys(restaurant.reviews).sort ((a, b) => {
+      return b - a;
+    });
 
-    let reviews = Object.keys(restaurant.reviews).map ((key) => {
+    let reviews = reviewKeys.map ((key) => {
       let review = restaurant.reviews[key];
 
       if (review.reviewer) {
@@ -39,7 +42,6 @@ class RestaurantShow extends React.Component {
       }
     });
 
-    debugger
     let image_urls = Object.keys(this.props.restaurant.images).map (key => {
       return this.props.restaurant.images[key];
     });
@@ -73,6 +75,7 @@ class RestaurantShow extends React.Component {
               ref={i => this._imageGallery = i}
               items = {images}
               slideInterval={2000}
+              showBullets={true}
             />
 
           </div>

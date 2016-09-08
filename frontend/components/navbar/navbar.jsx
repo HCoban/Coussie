@@ -49,6 +49,7 @@ class Navbar extends React.Component {
   filterRestaurants () {
     let filter = this.state.search;
     this.props.filter({query: filter});
+    this.props.router.push("/");
   }
 
   searchBox () {
@@ -60,8 +61,10 @@ class Navbar extends React.Component {
     );
   }
 
-  home () {
-    this.props.router.push("/");
+  home (e) {
+    e.preventDefault();
+    this.setState({["search"]: ""}, this.filterRestaurants);
+    // this.props.router.push("/");
   }
 
   render() {
