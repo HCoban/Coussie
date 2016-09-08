@@ -462,6 +462,31 @@ header {
   width: 90px;
 }
 
+.logo-picture-container {
+  box-sizing: border-box;
+  height: 55px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.logo {
+  height: 100%;
+  display: block;
+  padding: 5px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container > h1 {
+  font-size: 30px;
+  color:white;
+  letter-spacing: 3px;
+  padding-left: 10px;
+}
+
 @charset "UTF-8";
 .image-gallery {
   -webkit-user-select: none;

@@ -71,8 +71,11 @@ class Navbar extends React.Component {
 
     return (
       <div className="navbar">
-        <div className="logo-container">
-          <img onClick={this.home} className="logo" src="http://res.cloudinary.com/dguiepgvw/image/upload/v1472689058/1_Primary_logo_on_transparent_258x75_lv51pq.png"></img>
+        <div className="logo-container" onClick={this.home}>
+          <div className="logo-picture-container">
+            <img className="logo" src="https://res.cloudinary.com/dguiepgvw/image/upload/v1473311876/noun_24_white_hycgsg.png"></img>
+          </div>
+          <h1>coussie</h1>
         </div>
         {this.searchBox()}
         <div>{this.handleUserButton()}</div>

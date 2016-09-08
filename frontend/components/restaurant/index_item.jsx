@@ -15,11 +15,18 @@ const RestaurantIndexItem = ({restaurant, router}) => {
   } else {
     mainPic = undefined;
   }
+
+  let reviewDescription;
+  if (restaurant.reviews[lastReviewIndex].description.length > 180) {
+    reviewDescription = `${restaurant.reviews[lastReviewIndex].description.slice(0, 185)}...`;
+  } else {
+    reviewDescription = restaurant.reviews[lastReviewIndex].description;
+  }
   return (
     <div className="restaurant-index-item">
       <div className="restaurant-index-pic-container">
         <Link to={link}><img className="restaurant-item-pic" src={ mainPic || restaurant.image_url} /></Link>
-        
+
       </div>
       <div className="restaurant-item-info">
         <Link to={link} className="restaurant-item-name">{restaurant.name}</Link>
@@ -34,7 +41,7 @@ const RestaurantIndexItem = ({restaurant, router}) => {
           </div>
           <div className="review">
             <p className="review-description">
-              {`${restaurant.reviews[lastReviewIndex].description.slice(0, 185)}...`}
+              {reviewDescription}
             </p>
           </div>
         </div>
