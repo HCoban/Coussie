@@ -147,6 +147,7 @@ header {
   width: 60px;
   height: 60px;
   display: block;
+  border-radius: 50%;
 }
 
 .user-button-icon > img {
