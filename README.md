@@ -39,7 +39,7 @@ end
 api/users/show renders a partial which only extracts insensitive information.
 
 ```ruby
-  json.extract! user, :username, :picture_url;
+json.extract! user, :username, :picture_url;
 ```
 
 ### Rendering Restaurants
@@ -85,17 +85,17 @@ by the restaurant's `category_id`s. This is done via an ajax request to
 `API::CategoriesController`.
 
 ```ruby
-  class Api::CategoriesController < ApplicationController
-    def index
-      @categories = Category.all
-      render :index
-    end
-
-    def show
-      @category = Category.find(params[:id])
-      render :show;
-    end
+class Api::CategoriesController < ApplicationController
+  def index
+    @categories = Category.all
+    render :index
   end
+
+  def show
+    @category = Category.find(params[:id])
+    render :show;
+  end
+end
 ```
 
 Rendered `show` view filters the restaurants by `category_id` as follows
@@ -119,23 +119,23 @@ titles are stored on a separate table, the results are combined in the
 controller as follows.
 
 ```ruby
-  class Api::RestaurantsController < ApplicationController
-    def index
-      if params[:query]
-        condition = "%#{params[:query]}%"
-        @restaurants = Restaurant.where("name ILIKE ? OR city ILIKE ?", condition, condition)
-        from_categories = []
-        Category.where("title ILIKE ?", condition).each do |c|
-          from_categories.concat(c.restaurants)
-        end.flatten
-        @restaurants = @restaurants.concat(from_categories)
-      else
-        @restaurants = Restaurant.all
-      end
-      render :index
+class Api::RestaurantsController < ApplicationController
+  def index
+    if params[:query]
+      condition = "%#{params[:query]}%"
+      @restaurants = Restaurant.where("name ILIKE ? OR city ILIKE ?", condition, condition)
+      from_categories = []
+      Category.where("title ILIKE ?", condition).each do |c|
+        from_categories.concat(c.restaurants)
+      end.flatten
+      @restaurants = @restaurants.concat(from_categories)
+    else
+      @restaurants = Restaurant.all
     end
-    ...
+    render :index
   end
+  ...
+end
 ```
 
 ## Future Directions for the Project
