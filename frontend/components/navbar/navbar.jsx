@@ -62,7 +62,6 @@ class Navbar extends React.Component {
   home (e) {
     e.preventDefault();
     this.setState({["search"]: ""}, this.filterRestaurants);
-    // this.props.router.push("/");
   }
 
   render() {

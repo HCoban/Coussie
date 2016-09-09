@@ -35,9 +35,7 @@ class AppRouter extends React.Component {
           <Route path="/signup" component={AuthFormContainer} />
           <Route path="/login" component={AuthFormContainer} />
           <Route path="/restaurants" component={RestaurantIndexContainer} />
-          <Route path="/restaurants/:restaurantId" component={RestaurantShowContainer}>
-          </Route>
-          <Route path="/about" component={AuthFormContainer} />
+          <Route path="/restaurants/:restaurantId" component={RestaurantShowContainer} />
           <Route path="/credits" component={Credits} />
         </Route>
       </Router>

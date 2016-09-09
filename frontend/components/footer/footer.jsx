@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer-container">
       <ul className="footer-column">
         <h3>About</h3>
-        <Link to="/about">About Coussie</Link>
+        <a href="https://github.com/HCoban/Coussie">About Coussie</a>
         <Link to="/credits">Credits</Link>
       </ul>
       <ul className="footer-column">
