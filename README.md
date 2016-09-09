@@ -57,14 +57,14 @@ Restaurant data is rendered using React components named RestaurantIndex,
 RestaurantIndexItem, RestaurantShow, and RestaurantMap. The image below
 shows Index and IndexItem components.
 
-![image of restaurants index](wireframes/coussie-index.png)
+![image of restaurants index](docs/wireframes/coussie-index.png)
 
 Restaurant index holds index items which all render single restaurant
 information. These information is passed to RestaurantShow component upon
 click on the restaurant title or the image. RestaurantShow contains
 RestaurantMap together with restaurant details such as images or reviews.
 
-![image of restaurants show](wireframes/coussie-show.png)
+![image of restaurants show](docs/wireframes/coussie-show.png)
 
 ### Reviews
 
