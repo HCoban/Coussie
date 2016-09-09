@@ -14,7 +14,6 @@ adequate seed data and sufficient CSS styling:
 - [ ] Hosting at Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] Restaurant pages
-- [ ] User / reviewer pages
 - [ ] Reviews / ratings
 - [ ] Google-map integration
 - [ ] Auto-complete search
