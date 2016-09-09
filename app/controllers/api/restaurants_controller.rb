@@ -4,6 +4,11 @@ class Api::RestaurantsController < ApplicationController
     if params[:query]
       condition = "%#{params[:query]}%"
       @restaurants = Restaurant.where("name ILIKE ? OR city ILIKE ?", condition, condition)
+      from_categories = []
+      Category.where("title ILIKE ?", condition).each do |c|
+        from_categories.concat(c.restaurants)
+      end.flatten
+      @restaurants = @restaurants.concat(from_categories)
     else
       @restaurants = Restaurant.all
     end
