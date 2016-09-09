@@ -7,6 +7,7 @@ import CategoryIndexContainer from '../category/index_container';
 import * as RestaurantActions from '../../actions/restaurant_actions';
 import * as CategoryActions from '../../actions/category_actions';
 import RestaurantShowContainer from '../restaurant/show_container';
+import Credits from '../credits/credits';
 
 class AppRouter extends React.Component {
   constructor(props) {
@@ -37,8 +38,7 @@ class AppRouter extends React.Component {
           <Route path="/restaurants/:restaurantId" component={RestaurantShowContainer}>
           </Route>
           <Route path="/about" component={AuthFormContainer} />
-          <Route path="/credits" component={AuthFormContainer} />
-          <Route path="/acknowledgements" component={AuthFormContainer} />
+          <Route path="/credits" component={Credits} />
         </Route>
       </Router>
     );

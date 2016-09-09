@@ -547,6 +547,16 @@ header {
   align-items: center;
 }
 
+.credits ul li {
+  list-style: none;
+  padding: 5px;
+  font-style: italic;
+}
+
+.credits {
+  padding: 10px;
+}
+
 @charset "UTF-8";
 .image-gallery {
   -webkit-user-select: none;

@@ -8,7 +8,6 @@ const Footer = () => {
         <h3>About</h3>
         <Link to="/about">About Coussie</Link>
         <Link to="/credits">Credits</Link>
-        <Link to="/acknowledgements">Acknowledgements</Link>
       </ul>
       <ul className="footer-column">
         <h3>Connect</h3>
