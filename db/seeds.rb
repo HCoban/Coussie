@@ -5,21 +5,43 @@ User.create(username: "bella", password: "password", picture_url: "https://rando
 User.create(username: "borja", password: "password", picture_url: "https://randomuser.me/api/portraits/men/72.jpg")
 User.create(username: "brooke", password: "password", picture_url: "https://randomuser.me/api/portraits/women/75.jpg")
 User.create(username: "cassandre", password: "password", picture_url: "https://randomuser.me/api/portraits/women/21.jpg")
+User.create(username: "cody", password: "password", picture_url: "https://randomuser.me/api/portraits/men/50.jpg")
 User.create(username: "daniel", password: "password", picture_url: "https://randomuser.me/api/portraits/men/46.jpg")
+User.create(username: "daniel2", password: "password", picture_url: "https://randomuser.me/api/portraits/men/38.jpg")
 User.create(username: "eva", password: "password", picture_url: "https://randomuser.me/api/portraits/women/44.jpg")
 User.create(username: "errol", password: "password", picture_url: "https://randomuser.me/api/portraits/men/50.jpg")
 User.create(username: "gallardo", password: "password", picture_url: "https://randomuser.me/api/portraits/men/99.jpg")
+User.create(username: "gaspard", password: "password", picture_url: "https://randomuser.me/api/portraits/men/41.jpg")
+User.create(username: "heraldo", password: "password", picture_url: "https://randomuser.me/api/portraits/men/32.jpg")
 User.create(username: "iida", password: "password", picture_url: "https://randomuser.me/api/portraits/women/77.jpg")
+User.create(username: "isaac", password: "password", picture_url: "https://randomuser.me/api/portraits/men/31.jpg")
+User.create(username: "joshua", password: "password", picture_url: "https://randomuser.me/api/portraits/men/99.jpg")
 User.create(username: "kasper", password: "password", picture_url: "https://randomuser.me/api/portraits/men/52.jpg")
+User.create(username: "konstantin", password: "password", picture_url: "https://randomuser.me/api/portraits/men/15.jpg")
 User.create(username: "liam", password: "password", picture_url: "https://randomuser.me/api/portraits/men/43.jpg")
+User.create(username: "liam2", password: "password", picture_url: "https://randomuser.me/api/portraits/men/53.jpg")
 User.create(username: "lise", password: "password", picture_url: "https://randomuser.me/api/portraits/women/23.jpg")
+User.create(username: "louise", password: "password", picture_url: "https://randomuser.me/api/portraits/women/59.jpg")
 User.create(username: "lumi", password: "password", picture_url: "https://randomuser.me/api/portraits/women/57.jpg")
 User.create(username: "malik", password: "password", picture_url: "https://randomuser.me/api/portraits/men/28.jpg")
+User.create(username: "nasser", password: "password", picture_url: "https://randomuser.me/api/portraits/men/67.jpg")
 User.create(username: "neusa", password: "password", picture_url: "https://randomuser.me/api/portraits/women/51.jpg")
 User.create(username: "noah", password: "password", picture_url: "https://randomuser.me/api/portraits/men/63.jpg")
+User.create(username: "octavio", password: "password", picture_url: "https://randomuser.me/api/portraits/men/51.jpg")
+User.create(username: "odette", password: "password", picture_url: "https://randomuser.me/api/portraits/women/5.jpg")
+User.create(username: "rafael", password: "password", picture_url: "https://randomuser.me/api/portraits/men/7.jpg")
+User.create(username: "rose", password: "password", picture_url: "https://randomuser.me/api/portraits/women/12.jpg")
 User.create(username: "samantha", password: "password", picture_url: "https://randomuser.me/api/portraits/women/85.jpg")
+User.create(username: "scott", password: "password", picture_url: "https://randomuser.me/api/portraits/men/25.jpg")
 User.create(username: "serafim", password: "password", picture_url: "https://randomuser.me/api/portraits/men/80.jpg")
+User.create(username: "stella", password: "password", picture_url: "https://randomuser.me/api/portraits/women/63.jpg")
 User.create(username: "rasmus", password: "password", picture_url: "https://randomuser.me/api/portraits/men/4.jpg")
+
+
+
+
+
+
 
 
 restaurant_categories = {
@@ -76,7 +98,7 @@ restaurant_categories.each do |category, values|
     image_count = rand(1..(current_images.count))
     image_count = 7 if image_count > 7
 
-    image_count.times do |i|
+    image_count.times do
       Image.create(restaurant_id: restaurant_id, image_url: current_images.shuffle!.pop)
       break if current_images.empty?
     end

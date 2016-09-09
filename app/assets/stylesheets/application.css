@@ -155,6 +155,7 @@ header {
 .user-button-icon > img {
   display: block;
   width: 100%;
+  height: 100%;
 }
 
 .user-button:hover > .options {

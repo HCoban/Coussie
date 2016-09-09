@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
     class_name: :Review
 
   def ensure_picture_url
-    self.picture_url ||= "http://res.cloudinary.com/dguiepgvw/image/upload/c_crop,h_700,y_0/v1472687944/noun_138589_cc_rsfmug.png"
+    self.picture_url ||= "https://res.cloudinary.com/dguiepgvw/image/upload/v1473401605/cropped_white_profile_noun_468156_cc_lw2b04.png"
   end
 
   def password=(password)
