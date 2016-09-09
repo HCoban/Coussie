@@ -4,6 +4,7 @@ import RestaurantMap from './restaurant_map';
 import ReviewShow from '../review/show';
 import NewReviewFormContainer from '../review/form_container';
 import ImageGallery from 'react-image-gallery';
+import StarRatingComponent from 'react-star-rating-component';
 
 class RestaurantShow extends React.Component {
 
@@ -15,11 +16,19 @@ class RestaurantShow extends React.Component {
     this._imageGallery.pause();
   }
 
-  componentDidUpdate () {
-
-  }
-
   render () {
+
+    let stars;
+    if (this.props.restaurant.average_rating) {
+      stars = <StarRatingComponent
+          name="average-rating"
+          editing={false}
+          starCount={5}
+          value={this.props.restaurant.average_rating}
+          />;
+    } else {
+      stars = "";
+    }
 
     let restaurant = this.props.restaurant || {};
     let reviewKeys = Object.keys(restaurant.reviews).sort ((a, b) => {
@@ -42,6 +51,13 @@ class RestaurantShow extends React.Component {
       }
     });
 
+    let mapAndMarker;
+    if (restaurant.lat) {
+      mapAndMarker = <RestaurantMap restaurant={restaurant}/>;
+    } else {
+      mapAndMarker = "";
+    }
+
     let image_urls = Object.keys(this.props.restaurant.images).map (key => {
       return this.props.restaurant.images[key];
     });
@@ -58,14 +74,22 @@ class RestaurantShow extends React.Component {
     } else {
       newReview = "";
     }
+    let averageRating = this.props.restaurant.average_rating;
+
+    let categoryTitle = `Ranked ${this.props.restaurant.ranking} in ${this.props.restaurant.category} Restaurants`;
 
     return (
       <div className="restaurant-show-container">
         <div className="restaurant-show">
           <div className="show-column-1">
-            <RestaurantMap restaurant={restaurant}/>
+            {mapAndMarker}
             <div className="restaurant-info">
               <h2>{this.props.restaurant.name}</h2>
+              <div className="restaurant-stars">
+                {stars}
+              </div>
+              <h3>{categoryTitle}</h3>
+              <h3></h3>
               <h3>{this.props.restaurant.address}</h3>
               <h3>{this.props.restaurant.telephone}</h3>
             </div>

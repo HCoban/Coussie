@@ -74,6 +74,7 @@ restaurant_categories.each do |category, values|
   for restaurant_id in values[:restaurants]
     current_images = values[:images].dup
     image_count = rand(1..(current_images.count))
+    image_count = 7 if image_count > 7
 
     image_count.times do
       a = Image.create(restaurant_id: restaurant_id, image_url: current_images.shuffle!.pop)

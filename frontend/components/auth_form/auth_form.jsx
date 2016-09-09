@@ -77,21 +77,26 @@ class AuthForm extends React.Component {
       errors = <h3 className="errors"></h3>;
     }
     return (
-      <div className="auth-form-container">
-        <form className="auth-form-box">
-          <h2 className="auth-form-header">Welcome to Coussie</h2>
-          {this.secondIndex()}
-          <link></link>
-          <input type="text" name="username" className="auth-input" placeholder="username" value={this.state.username} onChange={this.setInput} />
-          <input type="password" name="password" className="auth-input" placeholder="password" value={this.state.password} onChange={this.setInput} />
-          {errors}
-          <div className="auth-buttons">
-            <button className="auth-button" onClick={this.submit}>{this.loginOrSignup()}</button>
-            {guestlogin}
+      <div className="splash-container">
+        <h1 className="splash">Coussie is the best way to find the best restaurants</h1>
+        <div className="auth-form-container">
+          <form className="auth-form-box">
+            <div>
+              <h2 className="auth-form-header">Welcome to Coussie</h2>
+              {this.secondIndex()}
+              <link></link>
+              <input type="text" name="username" className="auth-input" placeholder="username" value={this.state.username} onChange={this.setInput} />
+              <input type="password" name="password" className="auth-input" placeholder="password" value={this.state.password} onChange={this.setInput} />
+              {errors}
+              <div className="auth-buttons">
+                <button className="auth-button" onClick={this.submit}>{this.loginOrSignup()}</button>
+                {guestlogin}
+              </div>
+            </div>
+          </form>
+          <div className="auth-form-logo-container">
+            <img className="auth-form-logo" src="http://res.cloudinary.com/dguiepgvw/image/upload/v1472670280/ccphoto-1466978913421-dad2ebd01d17_zf09i2.jpg"></img>
           </div>
-        </form>
-        <div className="auth-form-logo-container">
-          <img className="auth-form-logo" src="http://res.cloudinary.com/dguiepgvw/image/upload/v1472670280/ccphoto-1466978913421-dad2ebd01d17_zf09i2.jpg"></img>
         </div>
       </div>
     );

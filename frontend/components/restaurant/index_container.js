@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
   restaurants: state.restaurants,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => {

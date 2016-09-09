@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link, hashHistory, withRouter } from 'react-router';
-import Options from './options';
 
 class Navbar extends React.Component {
   constructor (props) {
@@ -20,7 +19,6 @@ class Navbar extends React.Component {
         <div className="user-button">
           <img src={this.props.currentUser.picture_url} className="user-button-icon"></img>
           <ul className="options">
-            <li>Edit my profile</li>
             <li onClick={this.logout}>Logout</li>
           </ul>
         </div>
