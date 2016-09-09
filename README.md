@@ -20,7 +20,7 @@ and a `RootMiddleware` (`SessionMiddleware`, `RestaurantMiddleware`,
 as a bootstrapping method and it excludes sensitive information.
 Root page renders content depending on the response
 from store's `Session.currentUser`. An ajax request to
-`API::SessionsController#login` provides content to be rendered by the root.
+`API::SessionsController#create` provides the current user information.
 
 ```ruby
 class Api::SessionsController < ApplicationController
