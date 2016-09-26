@@ -1,141 +1,141 @@
 
-User.create(username: "guest", password: "password", picture_url: "https://randomuser.me/api/portraits/women/58.jpg")
-
-User.create(username: "bella", password: "password", picture_url: "https://randomuser.me/api/portraits/women/2.jpg")
-User.create(username: "borja", password: "password", picture_url: "https://randomuser.me/api/portraits/men/72.jpg")
-User.create(username: "brooke", password: "password", picture_url: "https://randomuser.me/api/portraits/women/75.jpg")
-User.create(username: "cassandre", password: "password", picture_url: "https://randomuser.me/api/portraits/women/21.jpg")
-User.create(username: "cody", password: "password", picture_url: "https://randomuser.me/api/portraits/men/50.jpg")
-User.create(username: "daniel", password: "password", picture_url: "https://randomuser.me/api/portraits/men/46.jpg")
-User.create(username: "daniel2", password: "password", picture_url: "https://randomuser.me/api/portraits/men/38.jpg")
-User.create(username: "eva", password: "password", picture_url: "https://randomuser.me/api/portraits/women/44.jpg")
-User.create(username: "errol", password: "password", picture_url: "https://randomuser.me/api/portraits/men/50.jpg")
-User.create(username: "gallardo", password: "password", picture_url: "https://randomuser.me/api/portraits/men/99.jpg")
-User.create(username: "gaspard", password: "password", picture_url: "https://randomuser.me/api/portraits/men/41.jpg")
-User.create(username: "heraldo", password: "password", picture_url: "https://randomuser.me/api/portraits/men/32.jpg")
-User.create(username: "iida", password: "password", picture_url: "https://randomuser.me/api/portraits/women/77.jpg")
-User.create(username: "isaac", password: "password", picture_url: "https://randomuser.me/api/portraits/men/31.jpg")
-User.create(username: "joshua", password: "password", picture_url: "https://randomuser.me/api/portraits/men/99.jpg")
-User.create(username: "kasper", password: "password", picture_url: "https://randomuser.me/api/portraits/men/52.jpg")
-User.create(username: "konstantin", password: "password", picture_url: "https://randomuser.me/api/portraits/men/15.jpg")
-User.create(username: "liam", password: "password", picture_url: "https://randomuser.me/api/portraits/men/43.jpg")
-User.create(username: "liam2", password: "password", picture_url: "https://randomuser.me/api/portraits/men/53.jpg")
-User.create(username: "lise", password: "password", picture_url: "https://randomuser.me/api/portraits/women/23.jpg")
-User.create(username: "louise", password: "password", picture_url: "https://randomuser.me/api/portraits/women/59.jpg")
-User.create(username: "lumi", password: "password", picture_url: "https://randomuser.me/api/portraits/women/57.jpg")
-User.create(username: "malik", password: "password", picture_url: "https://randomuser.me/api/portraits/men/28.jpg")
-User.create(username: "nasser", password: "password", picture_url: "https://randomuser.me/api/portraits/men/67.jpg")
-User.create(username: "neusa", password: "password", picture_url: "https://randomuser.me/api/portraits/women/51.jpg")
-User.create(username: "noah", password: "password", picture_url: "https://randomuser.me/api/portraits/men/63.jpg")
-User.create(username: "octavio", password: "password", picture_url: "https://randomuser.me/api/portraits/men/51.jpg")
-User.create(username: "odette", password: "password", picture_url: "https://randomuser.me/api/portraits/women/5.jpg")
-User.create(username: "rafael", password: "password", picture_url: "https://randomuser.me/api/portraits/men/7.jpg")
-User.create(username: "rose", password: "password", picture_url: "https://randomuser.me/api/portraits/women/12.jpg")
-User.create(username: "samantha", password: "password", picture_url: "https://randomuser.me/api/portraits/women/85.jpg")
-User.create(username: "scott", password: "password", picture_url: "https://randomuser.me/api/portraits/men/25.jpg")
-User.create(username: "serafim", password: "password", picture_url: "https://randomuser.me/api/portraits/men/80.jpg")
-User.create(username: "stella", password: "password", picture_url: "https://randomuser.me/api/portraits/women/63.jpg")
-User.create(username: "rasmus", password: "password", picture_url: "https://randomuser.me/api/portraits/men/4.jpg")
-
-
-
-
-
-
-
-
-restaurant_categories = {
-  greek: {restaurants: [1, 2, 3, 4, 5], images: [
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281256/photo-1414358154612-ae3d3c120004_znqtid.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287599/photo-1414438359676-7b001e93aa49_rh1ut2.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287599/photo-1416453072034-c8dbfa2856b5_arv9g7.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287600/photo-1430931071372-38127bd472b8_bnhqgs.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1446034730750-a0b64d06ad13_d5mvow.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287602/photo-1468072114808-903e572b8ead_tq9t4h.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287602/photo-1468730533502-216da872eab2_rkr00n.jpg"
-    ]},
-  italian: {restaurants: [6, 7, 8, 9, 10], images: [
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281413/photo-1445116572660-236099ec97a0_swmywk.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281413/photo-1469307580733-007134b82100_klanr0.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281413/photo-1471691170738-9c6b554ebec1_gjlpwc.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287599/photo-1415226581130-91cb7f52f078_jqylf2.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1452725210141-07dda20225ec_tyfqmd.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1461072905169-7ca88b4d7b77_hbhhlq.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287602/photo-1467283492892-4326fa405008_gztan0.jpg"
-    ]},
-  american: {restaurants: [11, 12, 13, 14, 15], images: [
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/w1000-120ppiphoto-1458677677220-000ddaa037e3_1_j0xe2s.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272585/photo-1470343740979-20b904b850da_pvoyem.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1432752641289-a25fc853fceb_wqttzh.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1429012178110-d7a734a56176_lk8uje.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1426259759666-68da5c54402d_nupfdy.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272579/photo-1416772472542-01fdd961f986_prxpqp.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287599/photo-1421622548261-c45bfe178854_e2fvfl.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1468070975228-085c1fdd2d3e_isksfy.jpg"
-    ]},
-  asian: {restaurants: [16, 17, 18], images: [
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473280988/photo-1470256699805-a29e1b58598a_joyvit.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287599/6TjIJK0uSJWtQUZuQWMW_58400023_nl2zj1.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1445364502257-00c4ddb9b18d_dh2mmm.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1461869668403-2a6ec0cdd0c9_buhzoh.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287602/photo-1468801484140-62bb0dde60cf_dz0lxb.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287602/photo-1472833947245-d96dd29500a0_ygvji7.jpg"
-    ]},
-  german: {restaurants: [19, 20], images: [
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281264/aXpQLs4AQ5e1EtmeYkz3_20140524_124026_h2nbg7.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281264/unsplash_527bf4b4ae00d_1_ftnuqy.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287600/photo-1417353783325-14cb8f9ba1dd_wbgunb.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287600/photo-1428515613728-6b4607e44363_ucz9os.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287600/photo-1433155805822-ffc337821a5b_odnucf.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1438557068880-c5f474830377_ajbbtk.jpg",
-    "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287602/photo-1469234496837-d0101f54be3e_dvpsjo.jpg"
-    ]}
-}
-
-restaurant_categories.each do |category, values|
-  for restaurant_id in values[:restaurants]
-    current_images = values[:images].dup
-    image_count = rand(1..(current_images.count))
-    image_count = 7 if image_count > 7
-
-    image_count.times do
-      Image.create(restaurant_id: restaurant_id, image_url: current_images.shuffle!.pop)
-      break if current_images.empty?
-    end
-  end
-end
-
-
-#greek restaurants
-Restaurant.create(name: "Sagalassos", city: "San Francisco", lat: 37.754699, lng: -122.441700, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
-Restaurant.create(name: "Helena", city: "San Francisco", lat: 37.800791, lng: -122.405737, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
-Restaurant.create(name: "Athens", city: "San Francisco", lat: 37.807530, lng: -122.422807, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
-Restaurant.create(name: "Greek Culture", city: "San Francisco", lat: 37.754699, lng: -122.441700, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
-Restaurant.create(name: "Sirtaki", city: "Berkeley", lat: 37.873793, lng: -122.289557, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
-
-#italian restaurants
-Restaurant.create(name: "Va Chitarra", city: "Berkeley", lat: 37.878960, lng: -122.263374, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
-Restaurant.create(name: "Venezia", city: "San Francisco", lat: 37.739749, lng: -122.482031, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
-Restaurant.create(name: "Pizza Paradise", city: "San Francisco", lat: 37.786916, lng: -122.459809, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
-Restaurant.create(name: "Pizza and Pasta", city: "San Francisco", lat: 37.752771, lng: -122.490329, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
-Restaurant.create(name: "Sicilian Pizza", city: "Palo Alto", lat: 37.442956, lng: -122.156636, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
-
-#american restaurants
-Restaurant.create(name: "McKing's", city: "San Francisco", lat: 37.772782, lng: -122.417835, category_id: 3, owner_id: 1, address: "81 S Van Ness A", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1426259759666-68da5c54402d_nupfdy.jpg")
-Restaurant.create(name: "Burger World", city: "Palo Alto", lat: 37.428247, lng: -122.130509, category_id: 3, owner_id: 1, address: "Matadero Canal", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/w1000-120ppiphoto-1458677677220-000ddaa037e3_1_j0xe2s.jpg")
-Restaurant.create(name: "Big Plate", city: "San Francisco", lat: 37.771294, lng: -122.387525, category_id: 3, owner_id: 1, address: "330 Missian Bay Boulevard", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/w1000-120ppiphoto-1458677677220-000ddaa037e3_1_j0xe2s.jpg")
-
-#german restaurants
-Restaurant.create(name: "Bahnhof", city: "Oakland", lat: 37.808823, lng: -122.294740, category_id: 4, owner_id: 1, address: "1020 Chester Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847722/photo-1469234496837-d0101f54be3e_srh39o.jpg")
-Restaurant.create(name: "German food", city: "San Francisco", lat: 37.764817, lng: -122.461132, category_id: 4, owner_id: 1, address: "1265 4th Avenue", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847722/photo-1469234496837-d0101f54be3e_srh39o.jpg")
-Restaurant.create(name: "Das Essen", city: "San Francisco", lat: 37.728053, lng: -122.438294, category_id: 4, owner_id: 1, address: "216 Santa Rosa Avenue", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847722/photo-1469234496837-d0101f54be3e_srh39o.jpg")
-
-
-#asian restaurants
-Restaurant.create(name: "Wok", city: "San Francisco", lat: 37.764161, lng: -122.464493, category_id: 5, owner_id: 1, address: "Irving St & 7th Ave", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472855378/photo-1470256699805-a29e1b58598a_ucyhud.jpg")
-Restaurant.create(name: "Soup and Noodles", city: "San Francisco", lat: 37.756100, lng: -122.435340, category_id: 5, owner_id: 1, address: "3956 21st Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472855378/photo-1470256699805-a29e1b58598a_ucyhud.jpg")
-
-
+# User.create(username: "guest", password: "password", picture_url: "https://randomuser.me/api/portraits/women/58.jpg")
+#
+# User.create(username: "bella", password: "password", picture_url: "https://randomuser.me/api/portraits/women/2.jpg")
+# User.create(username: "borja", password: "password", picture_url: "https://randomuser.me/api/portraits/men/72.jpg")
+# User.create(username: "brooke", password: "password", picture_url: "https://randomuser.me/api/portraits/women/75.jpg")
+# User.create(username: "cassandre", password: "password", picture_url: "https://randomuser.me/api/portraits/women/21.jpg")
+# User.create(username: "cody", password: "password", picture_url: "https://randomuser.me/api/portraits/men/50.jpg")
+# User.create(username: "daniel", password: "password", picture_url: "https://randomuser.me/api/portraits/men/46.jpg")
+# User.create(username: "daniel2", password: "password", picture_url: "https://randomuser.me/api/portraits/men/38.jpg")
+# User.create(username: "eva", password: "password", picture_url: "https://randomuser.me/api/portraits/women/44.jpg")
+# User.create(username: "errol", password: "password", picture_url: "https://randomuser.me/api/portraits/men/50.jpg")
+# User.create(username: "gallardo", password: "password", picture_url: "https://randomuser.me/api/portraits/men/99.jpg")
+# User.create(username: "gaspard", password: "password", picture_url: "https://randomuser.me/api/portraits/men/41.jpg")
+# User.create(username: "heraldo", password: "password", picture_url: "https://randomuser.me/api/portraits/men/32.jpg")
+# User.create(username: "iida", password: "password", picture_url: "https://randomuser.me/api/portraits/women/77.jpg")
+# User.create(username: "isaac", password: "password", picture_url: "https://randomuser.me/api/portraits/men/31.jpg")
+# User.create(username: "joshua", password: "password", picture_url: "https://randomuser.me/api/portraits/men/99.jpg")
+# User.create(username: "kasper", password: "password", picture_url: "https://randomuser.me/api/portraits/men/52.jpg")
+# User.create(username: "konstantin", password: "password", picture_url: "https://randomuser.me/api/portraits/men/15.jpg")
+# User.create(username: "liam", password: "password", picture_url: "https://randomuser.me/api/portraits/men/43.jpg")
+# User.create(username: "liam2", password: "password", picture_url: "https://randomuser.me/api/portraits/men/53.jpg")
+# User.create(username: "lise", password: "password", picture_url: "https://randomuser.me/api/portraits/women/23.jpg")
+# User.create(username: "louise", password: "password", picture_url: "https://randomuser.me/api/portraits/women/59.jpg")
+# User.create(username: "lumi", password: "password", picture_url: "https://randomuser.me/api/portraits/women/57.jpg")
+# User.create(username: "malik", password: "password", picture_url: "https://randomuser.me/api/portraits/men/28.jpg")
+# User.create(username: "nasser", password: "password", picture_url: "https://randomuser.me/api/portraits/men/67.jpg")
+# User.create(username: "neusa", password: "password", picture_url: "https://randomuser.me/api/portraits/women/51.jpg")
+# User.create(username: "noah", password: "password", picture_url: "https://randomuser.me/api/portraits/men/63.jpg")
+# User.create(username: "octavio", password: "password", picture_url: "https://randomuser.me/api/portraits/men/51.jpg")
+# User.create(username: "odette", password: "password", picture_url: "https://randomuser.me/api/portraits/women/5.jpg")
+# User.create(username: "rafael", password: "password", picture_url: "https://randomuser.me/api/portraits/men/7.jpg")
+# User.create(username: "rose", password: "password", picture_url: "https://randomuser.me/api/portraits/women/12.jpg")
+# User.create(username: "samantha", password: "password", picture_url: "https://randomuser.me/api/portraits/women/85.jpg")
+# User.create(username: "scott", password: "password", picture_url: "https://randomuser.me/api/portraits/men/25.jpg")
+# User.create(username: "serafim", password: "password", picture_url: "https://randomuser.me/api/portraits/men/80.jpg")
+# User.create(username: "stella", password: "password", picture_url: "https://randomuser.me/api/portraits/women/63.jpg")
+# User.create(username: "rasmus", password: "password", picture_url: "https://randomuser.me/api/portraits/men/4.jpg")
+#
+#
+#
+#
+#
+#
+#
+#
+# restaurant_categories = {
+#   greek: {restaurants: [1, 2, 3, 4, 5], images: [
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281256/photo-1414358154612-ae3d3c120004_znqtid.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287599/photo-1414438359676-7b001e93aa49_rh1ut2.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287599/photo-1416453072034-c8dbfa2856b5_arv9g7.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287600/photo-1430931071372-38127bd472b8_bnhqgs.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1446034730750-a0b64d06ad13_d5mvow.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287602/photo-1468072114808-903e572b8ead_tq9t4h.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287602/photo-1468730533502-216da872eab2_rkr00n.jpg"
+#     ]},
+#   italian: {restaurants: [6, 7, 8, 9, 10], images: [
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281413/photo-1445116572660-236099ec97a0_swmywk.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281413/photo-1469307580733-007134b82100_klanr0.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281413/photo-1471691170738-9c6b554ebec1_gjlpwc.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287599/photo-1415226581130-91cb7f52f078_jqylf2.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1452725210141-07dda20225ec_tyfqmd.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1461072905169-7ca88b4d7b77_hbhhlq.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287602/photo-1467283492892-4326fa405008_gztan0.jpg"
+#     ]},
+#   american: {restaurants: [11, 12, 13, 14, 15], images: [
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/w1000-120ppiphoto-1458677677220-000ddaa037e3_1_j0xe2s.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272585/photo-1470343740979-20b904b850da_pvoyem.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1432752641289-a25fc853fceb_wqttzh.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1429012178110-d7a734a56176_lk8uje.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1426259759666-68da5c54402d_nupfdy.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272579/photo-1416772472542-01fdd961f986_prxpqp.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287599/photo-1421622548261-c45bfe178854_e2fvfl.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1468070975228-085c1fdd2d3e_isksfy.jpg"
+#     ]},
+#   asian: {restaurants: [16, 17, 18], images: [
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473280988/photo-1470256699805-a29e1b58598a_joyvit.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287599/6TjIJK0uSJWtQUZuQWMW_58400023_nl2zj1.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1445364502257-00c4ddb9b18d_dh2mmm.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1461869668403-2a6ec0cdd0c9_buhzoh.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287602/photo-1468801484140-62bb0dde60cf_dz0lxb.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287602/photo-1472833947245-d96dd29500a0_ygvji7.jpg"
+#     ]},
+#   german: {restaurants: [19, 20], images: [
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281264/aXpQLs4AQ5e1EtmeYkz3_20140524_124026_h2nbg7.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281264/unsplash_527bf4b4ae00d_1_ftnuqy.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287600/photo-1417353783325-14cb8f9ba1dd_wbgunb.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287600/photo-1428515613728-6b4607e44363_ucz9os.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287600/photo-1433155805822-ffc337821a5b_odnucf.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287601/photo-1438557068880-c5f474830377_ajbbtk.jpg",
+#     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473287602/photo-1469234496837-d0101f54be3e_dvpsjo.jpg"
+#     ]}
+# }
+#
+# restaurant_categories.each do |category, values|
+#   for restaurant_id in values[:restaurants]
+#     current_images = values[:images].dup
+#     image_count = rand(1..(current_images.count))
+#     image_count = 7 if image_count > 7
+#
+#     image_count.times do
+#       Image.create(restaurant_id: restaurant_id, image_url: current_images.shuffle!.pop)
+#       break if current_images.empty?
+#     end
+#   end
+# end
+#
+#
+# #greek restaurants
+# Restaurant.create(name: "Sagalassos", city: "San Francisco", lat: 37.754699, lng: -122.441700, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+# Restaurant.create(name: "Helena", city: "San Francisco", lat: 37.800791, lng: -122.405737, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+# Restaurant.create(name: "Athens", city: "San Francisco", lat: 37.807530, lng: -122.422807, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+# Restaurant.create(name: "Greek Culture", city: "San Francisco", lat: 37.754699, lng: -122.441700, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+# Restaurant.create(name: "Sirtaki", city: "Berkeley", lat: 37.873793, lng: -122.289557, category_id: 1, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+#
+# #italian restaurants
+# Restaurant.create(name: "Va Chitarra", city: "Berkeley", lat: 37.878960, lng: -122.263374, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+# Restaurant.create(name: "Venezia", city: "San Francisco", lat: 37.739749, lng: -122.482031, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+# Restaurant.create(name: "Pizza Paradise", city: "San Francisco", lat: 37.786916, lng: -122.459809, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+# Restaurant.create(name: "Pizza and Pasta", city: "San Francisco", lat: 37.752771, lng: -122.490329, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+# Restaurant.create(name: "Sicilian Pizza", city: "Palo Alto", lat: 37.442956, lng: -122.156636, category_id: 2, owner_id: 1, address: "3650 Market Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847720/photo-1464786255367-4a86027a5975_v8ksp7.jpg")
+#
+# #american restaurants
+# Restaurant.create(name: "McKing's", city: "San Francisco", lat: 37.772782, lng: -122.417835, category_id: 3, owner_id: 1, address: "81 S Van Ness A", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/photo-1426259759666-68da5c54402d_nupfdy.jpg")
+# Restaurant.create(name: "Burger World", city: "Palo Alto", lat: 37.428247, lng: -122.130509, category_id: 3, owner_id: 1, address: "Matadero Canal", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/w1000-120ppiphoto-1458677677220-000ddaa037e3_1_j0xe2s.jpg")
+# Restaurant.create(name: "Big Plate", city: "San Francisco", lat: 37.771294, lng: -122.387525, category_id: 3, owner_id: 1, address: "330 Missian Bay Boulevard", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473272584/w1000-120ppiphoto-1458677677220-000ddaa037e3_1_j0xe2s.jpg")
+#
+# #german restaurants
+# Restaurant.create(name: "Bahnhof", city: "Oakland", lat: 37.808823, lng: -122.294740, category_id: 4, owner_id: 1, address: "1020 Chester Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847722/photo-1469234496837-d0101f54be3e_srh39o.jpg")
+# Restaurant.create(name: "German food", city: "San Francisco", lat: 37.764817, lng: -122.461132, category_id: 4, owner_id: 1, address: "1265 4th Avenue", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847722/photo-1469234496837-d0101f54be3e_srh39o.jpg")
+# Restaurant.create(name: "Das Essen", city: "San Francisco", lat: 37.728053, lng: -122.438294, category_id: 4, owner_id: 1, address: "216 Santa Rosa Avenue", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472847722/photo-1469234496837-d0101f54be3e_srh39o.jpg")
+#
+#
+# #asian restaurants
+# Restaurant.create(name: "Wok", city: "San Francisco", lat: 37.764161, lng: -122.464493, category_id: 5, owner_id: 1, address: "Irving St & 7th Ave", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472855378/photo-1470256699805-a29e1b58598a_ucyhud.jpg")
+# Restaurant.create(name: "Soup and Noodles", city: "San Francisco", lat: 37.756100, lng: -122.435340, category_id: 5, owner_id: 1, address: "3956 21st Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472855378/photo-1470256699805-a29e1b58598a_ucyhud.jpg")
+#
+#
 reviews = [
   {vote: 5, review: "Wow. This place is really cool. It's close to my work so I often stop by for a take-away. I must say that both the choice and the location is great."},
   {vote: 5, review: "Last night we visited this restaurant with my visitors from abroad and they all loved it! It has a great choice of wine and coctails. The staff is very nice, too! I am looking forward to the next visit!"},
@@ -169,19 +169,24 @@ reviews = [
   {vote: 1, review: "I don't do much coussie but everybody should learn about this terrible place. The meet is raw, salad stinks, bread is like a stone! OMG!"},
   {vote: 1, review: "Unfortunately my son likes this place. But I am not going to come again!"}
 ]
+#
+# restaurant_id = 1
+# while restaurant_id <= Restaurant.count
+#   rand(1..6).times do
+#     review_index = rand(reviews.length)
+#     Review.create(reviewer_id: rand(User.count)+1, restaurant_id: restaurant_id, vote: reviews[review_index][:vote], description: reviews[review_index][:review])
+#   end
+#   restaurant_id += 1
+# end
+#
 
-restaurant_id = 1
-while restaurant_id <= Restaurant.count
-  rand(1..6).times do
-    review_index = rand(reviews.length)
-    Review.create(reviewer_id: rand(User.count)+1, restaurant_id: restaurant_id, vote: reviews[review_index][:vote], description: reviews[review_index][:review])
-  end
-  restaurant_id += 1
-end
-
-
-Category.create(title: "Greek", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473229330/noun_437044_cc_m4cyud.png")
-Category.create(title: "Italian", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473230741/noun_158755_cc_unirdj.png")
-Category.create(title: "American", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473229519/noun_304697_cc_p1kvbu.png")
-Category.create(title: "German", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473229895/noun_171213_cc_qe26kj.png")
-Category.create(title: "Asian", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473230000/noun_8078_cc_yt7xx6.png")
+restaurant_id = rand(Restaurant.count)
+review_index = rand(reviews.length)
+Review.create(reviewer_id: rand(User.count)+1, restaurant_id: restaurant_id, vote: reviews[review_index][:vote], description: reviews[review_index][:review])
+ 
+#
+# Category.create(title: "Greek", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473229330/noun_437044_cc_m4cyud.png")
+# Category.create(title: "Italian", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473230741/noun_158755_cc_unirdj.png")
+# Category.create(title: "American", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473229519/noun_304697_cc_p1kvbu.png")
+# Category.create(title: "German", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473229895/noun_171213_cc_qe26kj.png")
+# Category.create(title: "Asian", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473230000/noun_8078_cc_yt7xx6.png")

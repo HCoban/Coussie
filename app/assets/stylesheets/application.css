@@ -131,7 +131,6 @@ header {
   background-color: #f00;
   height: 60px;
   z-index: 1;
-  position: relative;
   box-sizing: border-box;
   min-width: 1300px;
 }
@@ -142,12 +141,14 @@ header {
   width: 1300px;
   margin: 0px auto;
   align-items: center;
+  position: relative;
+
 }
 
 
 .user-button-icon {
-  width: 60px;
-  height: 60px;
+  width: 100%;
+  height: 100%;
   display: block;
   border-radius: 50%;
 }
@@ -158,12 +159,19 @@ header {
   height: 100%;
 }
 
+.user-button {
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+}
+
 .user-button:hover > .options {
   display: block;
 }
 
 .user-button:hover {
   cursor: pointer;
+  background-color: #a20000;
 }
 
 .options {
@@ -171,20 +179,24 @@ header {
   position: absolute;
   overflow: hidden;
   z-index: 1;
+  top: 60px;
+  right: 0px;
+  background-color: red;
+  color: white;
 }
 
 .options li {
-  background-color: white;
   padding: 10px;
 }
 
 .options li:hover {
-  background-color: red;
+  background-color: #a20000;
   cursor: pointer;
 }
 
 .logo-container:hover {
   cursor: pointer;
+  background-color: #a20000;
 }
 
 .search-box {
@@ -239,7 +251,10 @@ header {
   font-size: 20px;
   font-weight: bold;
   color: #0073bb;
+}
 
+.restaurant-item-name:hover {
+  text-decoration: underline;
 }
 
 .restaurant-index span {
@@ -247,16 +262,21 @@ header {
   font-size: 26px;
 }
 .restaurant-index-pic-container {
-  /*padding: 40px;*/
-  /*display: block;*/
   width: 200px;
+  height: 134px;
   float: left;
   display: block;
+  box-sizing: border-box;
+  padding: 0px;
+}
+
+.restaurant-index-pic-container:hover {
+  padding: 5px;
 }
 
 .restaurant-item-pic {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   display: block;
 }
@@ -455,6 +475,11 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.category-index-item:hover {
+  background-color: #a20000;
+  cursor: pointer;
 }
 
 .category-index-item:active {
