@@ -428,7 +428,7 @@ header {
 .review-desc-container {
   width: 550px;
   list-style: none;
-  padding: 10px;
+  padding: 0px 10px;
 }
 
 .restaurant-review > span {
@@ -515,7 +515,7 @@ header {
   width: 128px;
 }
 
-.review-desc-container > input {
+.review-desc-container > .new-review-submit {
   border: 1px solid #a9a9a9;
   background-color: red;
   border-radius: 5px;
@@ -523,6 +523,17 @@ header {
   padding: 2px;
   color: white;
   width: 90px;
+}
+
+.delete-review {
+  padding: 5px;
+  background-color: gray;
+  color: white;
+  border-radius: 5px;
+}
+
+.review-desc-container .description {
+  min-height: 110px;
 }
 
 .logo-picture-container {

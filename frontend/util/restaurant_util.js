@@ -15,6 +15,22 @@ export const createReview = (data, success) => {
   });
 };
 
+export const editReview = (data, success) => {
+  $.ajax({
+    method: "PATCH",
+    // url:
+  });
+};
+
+export const deleteReview = (reviewId, success) => {
+  let targetUrl = `api/reviews/${reviewId.review}`;
+  $.ajax({
+    method: "DELETE",
+    url: targetUrl,
+    success: success
+  });
+};
+
 export const fetchFilteredRestaurants = (data, success) => {
   $.ajax({
     method: "GET",

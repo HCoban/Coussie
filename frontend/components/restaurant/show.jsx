@@ -40,8 +40,8 @@ class RestaurantShow extends React.Component {
 
       if (review.reviewer) {
         return (
-          <ReviewShow key={key} reviewerpic={review.pic}
-            reviewer={review.reviewer}
+          <ReviewShow key={key} deleteReview = {this.props.deleteReview} id={review.id} reviewerpic={review.pic}
+            reviewer={review.reviewer} currentUser={this.props.currentUser.username}
             vote={review.vote} description={review.description}/>
         );
       } else {

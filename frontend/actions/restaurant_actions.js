@@ -2,6 +2,8 @@ export const RestaurantConstants = {
   REQUEST_ALL_RESTAURANTS: "REQUEST_ALL_RESTAURANTS",
   RECEIVE_ALL_RESTAURANTS: "RECEIVE_ALL_RESTAURANTS",
   CREATE_REVIEW: "CREATE_REVIEW",
+  EDIT_REVIEW: "EDIT_REVIEW",
+  DELETE_REVIEW: "DELETE_REVIEW",
   FILTER: "FILTER"
 };
 
@@ -16,6 +18,16 @@ export const receiveAllRestaurants = (restaurants) => ({
 
 export const createReview = (review) => ({
   type: RestaurantConstants.CREATE_REVIEW,
+  review
+});
+
+export const editReview = (review) => ({
+  type: RestaurantConstants.EDIT_REVIEW,
+  review
+});
+
+export const deleteReview = (review) => ({
+  type: RestaurantConstants.DELETE_REVIEW,
   review
 });
 

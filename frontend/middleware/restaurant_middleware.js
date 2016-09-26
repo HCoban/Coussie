@@ -1,6 +1,6 @@
 import { RestaurantConstants, receiveAllRestaurants, filter } from '../actions/restaurant_actions';
 import { receiveSingleCategory } from '../actions/category_actions';
-import { fetchAllRestaurants, fetchFilteredRestaurants, createReview } from '../util/restaurant_util';
+import { fetchAllRestaurants, fetchFilteredRestaurants, createReview, editReview, deleteReview } from '../util/restaurant_util';
 
 
 const RestaurantMiddleware = ({dispatch}) => next => action => {
@@ -13,6 +13,10 @@ const RestaurantMiddleware = ({dispatch}) => next => action => {
       return next(action);
     case RestaurantConstants.CREATE_REVIEW:
       return createReview(action.review, receiveAllRestaurantSuccess);
+    case RestaurantConstants.EDIT_REVIEW:
+      return editReview(action.review, receiveAllRestaurantSuccess);
+    case RestaurantConstants.DELETE_REVIEW:
+      return deleteReview(action.review, receiveFilteredRestaurantsSuccess);
     case RestaurantConstants.FILTER:
       fetchFilteredRestaurants(action.query, receiveFilteredRestaurantsSuccess);
       return next(action);

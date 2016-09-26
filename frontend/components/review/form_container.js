@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  createReview: (review) => dispatch(createReview(review))
+  createReview: (review) => dispatch(createReview(review)),
 });
 
 const NewReviewFormContainer = connect(
