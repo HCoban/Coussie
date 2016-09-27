@@ -81,7 +81,7 @@ class NewReviewForm extends React.Component {
             <li className="description">
               {description}
             </li>
-
+            {submit}
           </form>
         </div>
       </div>
