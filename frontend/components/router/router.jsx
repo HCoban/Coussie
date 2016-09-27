@@ -23,7 +23,7 @@ class AppRouter extends React.Component {
 
   redirectIfLoggedOut (nextState, replace) {
     if (!this.context.store.getState().session.currentUser) {
-      replace("/login");
+      // replace("/login");
     }
   }
 

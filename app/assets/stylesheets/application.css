@@ -306,6 +306,15 @@ header {
   color: #f00;
 }
 
+.review-warning {
+   border: 1px solid #ccc;
+   padding: 5px;
+   width: 658px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+
+ }
+ 
 .reviewer-picture {
   display: block;
   float: left;

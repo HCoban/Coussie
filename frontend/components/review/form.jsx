@@ -43,24 +43,45 @@ class NewReviewForm extends React.Component {
   }
 
   render() {
+    let reviewerPic;
+    let reviewerDetails;
+    let star;
+    let description;
+    let submit;
+
+    if (this.props.currentUser) {
+      reviewerPic = <img src={this.props.currentUser.picture_url}></img>;
+      reviewerDetails = (
+        <ul className="reviewer-details">
+        <li>{this.props.currentUser.username}</li>
+        <li>{this.props.currentUser.city}</li>
+        </ul>
+      );
+      star = <StarRatingComponent name="newVote" value={this.state.vote} editing={true} onStarClick={this.onStarClick}/>;
+      description = <textarea onChange={this.update("description")} value={this.state.description} cols="55" rows="10" placeholder="your review here" className="input-description"></textarea>;
+      submit = <input className="new-review-submit" type="submit" value="Submit"></input>;
+    } else {
+      reviewerPic = <img src="https://res.cloudinary.com/dguiepgvw/image/upload/v1472687944/noun_138589_cc_rsfmug.png"></img>;
+      reviewerDetails = "";
+      star = <StarRatingComponent name="newVote" value={3} editing={false} />;
+      description = <textarea value="" cols="55" rows="5" placeholder="Log in to write your first review" className="input-description" readOnly></textarea>;
+      submit = "";
+    }
     return (
       <div className="review-show">
         <div className="reviewer-info">
           <ul className="reviewer-pic">
-            <img src={this.props.currentUser.picture_url}></img>
+            {reviewerPic}
           </ul>
-          <ul className="reviewer-details">
-            <li>{this.props.currentUser.username}</li>
-            <li>{this.props.currentUser.city}</li>
-          </ul>
+          {reviewerDetails}
         </div>
         <div className="review-desc-container">
           <form className="-new-review-form" onSubmit={this.handleSubmit}>
-            <StarRatingComponent name="newVote" value={this.state.vote} editing={true} onStarClick={this.onStarClick}/>
+            {star}
             <li className="description">
-              <textarea onChange={this.update("description")} value={this.state.description} cols="55" rows="10" placeholder="your review here" className="input-description"></textarea>
+              {description}
             </li>
-            <input className="new-review-submit" type="submit" value="Submit"></input>
+
           </form>
         </div>
       </div>

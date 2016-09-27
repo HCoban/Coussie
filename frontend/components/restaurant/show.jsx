@@ -39,14 +39,20 @@ class RestaurantShow extends React.Component {
       let review = restaurant.reviews[key];
 
       if (review.reviewer) {
+        let currentUser;
+        if (!this.props.currentUser) {
+          currentUser = undefined
+        } else {
+          currentUser = this.props.currentUser
+        }
         return (
           <ReviewShow key={key} deleteReview = {this.props.deleteReview} id={review.id} reviewerpic={review.pic}
-            reviewer={review.reviewer} currentUser={this.props.currentUser.username}
+            reviewer={review.reviewer} currentUser={currentUser}
             vote={review.vote} description={review.description}/>
         );
       } else {
         return (
-          <ReviewShow vote={review.vote} description={review.description}/>
+          <ReviewShow key={key} vote={review.vote} description={review.description}/>
         );
       }
     });
@@ -69,15 +75,10 @@ class RestaurantShow extends React.Component {
     });
 
     let newReview;
-    if (this.props.currentUser) {
       newReview = <NewReviewFormContainer restaurantId={this.props.restaurantId}/>;
-    } else {
-      newReview = "";
-    }
     let averageRating = this.props.restaurant.average_rating;
 
     let categoryTitle = `Ranked ${this.props.restaurant.ranking} in ${this.props.restaurant.category} Restaurants`;
-
     return (
       <div className="restaurant-show-container">
         <div className="restaurant-show">
