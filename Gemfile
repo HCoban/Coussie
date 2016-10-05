@@ -48,6 +48,7 @@ group :development do
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rails_model_visualizer'
 end
 
 group :production do

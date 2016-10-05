@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>Rails Model Visualizer</title>
+        <link rel="stylesheet" media="all" href="./application.css">
+      </head>
+      <body><div class="superclass">ActiveRecord::Base
+        <div class="model">
+        <h1>Category</h1>
+        <div class="model-details">
+          <ul>SQL Columns
+          <div class="list-name">id
+      <div class="list-source">integer</div>
+      </div><div class="list-name">created_at
+      <div class="list-source">timestamp without time zone</div>
+      </div><div class="list-name">updated_at
+      <div class="list-source">timestamp without time zone</div>
+      </div><div class="list-name">title
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">image_url
+      <div class="list-source">character varying</div>
+      </div>
+          </ul>
+          <ul>Methods
+          
+          </ul>
+          <ul>Associations
+          <div class="list-name">has_many: restaurants
+      <div class="list-source"></div>
+      </div>
+          </ul>
+        </div>
+      </div><div class="model">
+        <h1>Image</h1>
+        <div class="model-details">
+          <ul>SQL Columns
+          <div class="list-name">id
+      <div class="list-source">integer</div>
+      </div><div class="list-name">restaurant_id
+      <div class="list-source">integer</div>
+      </div><div class="list-name">image_url
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">created_at
+      <div class="list-source">timestamp without time zone</div>
+      </div><div class="list-name">updated_at
+      <div class="list-source">timestamp without time zone</div>
+      </div>
+          </ul>
+          <ul>Methods
+          
+          </ul>
+          <ul>Associations
+          <div class="list-name">belongs_to: restaurant
+      <div class="list-source"></div>
+      </div>
+          </ul>
+        </div>
+      </div><div class="model">
+        <h1>Restaurant</h1>
+        <div class="model-details">
+          <ul>SQL Columns
+          <div class="list-name">id
+      <div class="list-source">integer</div>
+      </div><div class="list-name">name
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">city
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">lat
+      <div class="list-source">double precision</div>
+      </div><div class="list-name">lng
+      <div class="list-source">double precision</div>
+      </div><div class="list-name">category_id
+      <div class="list-source">integer</div>
+      </div><div class="list-name">owner_id
+      <div class="list-source">integer</div>
+      </div><div class="list-name">website
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">telephone
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">price_range
+      <div class="list-source">integer</div>
+      </div><div class="list-name">created_at
+      <div class="list-source">timestamp without time zone</div>
+      </div><div class="list-name">updated_at
+      <div class="list-source">timestamp without time zone</div>
+      </div><div class="list-name">address
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">image_url
+      <div class="list-source">character varying</div>
+      </div>
+          </ul>
+          <ul>Methods
+          <div class="list-name">ensure_image_url
+      <div class="list-source">>  def ensure_image_url
+<br>>>>    self.image_url ||= "http://images.clipartpanda.com/restaurant-clipart-restaurant-building-clipart-great.jpg"
+<br>>  end
+</div>
+      </div><div class="list-name">average_rating
+      <div class="list-source">>  def average_rating
+<br>>>>    votes = 0
+<br>>>>    for review in self.reviews
+<br>>>>>>      votes += review.vote
+<br>>>>    end
+<br>>>>    if self.reviews.count>0
+<br>>>>>>      return votes.to_f / self.reviews.count
+<br>>>>    else
+<br>>>>>>      return 0
+<br>>>>    end
+<br>>  end
+</div>
+      </div>
+          </ul>
+          <ul>Associations
+          <div class="list-name">belongs_to: owner
+      <div class="list-source">class_name: User</div>
+      </div><div class="list-name">has_many: reviews
+      <div class="list-source">class_name: Review</div>
+      </div><div class="list-name">belongs_to: category
+      <div class="list-source"></div>
+      </div><div class="list-name">has_many: images
+      <div class="list-source"></div>
+      </div>
+          </ul>
+        </div>
+      </div><div class="model">
+        <h1>Review</h1>
+        <div class="model-details">
+          <ul>SQL Columns
+          <div class="list-name">id
+      <div class="list-source">integer</div>
+      </div><div class="list-name">reviewer_id
+      <div class="list-source">integer</div>
+      </div><div class="list-name">restaurant_id
+      <div class="list-source">integer</div>
+      </div><div class="list-name">vote
+      <div class="list-source">integer</div>
+      </div><div class="list-name">description
+      <div class="list-source">text</div>
+      </div><div class="list-name">picture_url
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">created_at
+      <div class="list-source">timestamp without time zone</div>
+      </div><div class="list-name">updated_at
+      <div class="list-source">timestamp without time zone</div>
+      </div>
+          </ul>
+          <ul>Methods
+          
+          </ul>
+          <ul>Associations
+          <div class="list-name">belongs_to: reviewer
+      <div class="list-source">class_name: User</div>
+      </div><div class="list-name">belongs_to: restaurant
+      <div class="list-source"></div>
+      </div>
+          </ul>
+        </div>
+      </div><div class="model">
+        <h1>User</h1>
+        <div class="model-details">
+          <ul>SQL Columns
+          <div class="list-name">id
+      <div class="list-source">integer</div>
+      </div><div class="list-name">username
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">password_digest
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">session_token
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">email
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">city
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">motto
+      <div class="list-source">text</div>
+      </div><div class="list-name">picture_url
+      <div class="list-source">character varying</div>
+      </div><div class="list-name">created_at
+      <div class="list-source">timestamp without time zone</div>
+      </div><div class="list-name">updated_at
+      <div class="list-source">timestamp without time zone</div>
+      </div>
+          </ul>
+          <ul>Methods
+          <div class="list-name">password
+      <div class="list-source">>  attr_reader :password
+<br>>
+<br>>  has_many :restaurants,
+<br>>>>    primary_key: :id,
+<br>>>>    foreign_key: :owner_id,
+<br>>>>    class_name: :Restaurant
+<br>>
+<br>>  has_many :reviews,
+<br>>>>    foreign_key: :reviewer_id,
+<br>>>>    class_name: :Review
+<br>>
+<br>>  def ensure_picture_url
+<br>>>>    self.picture_url ||= "https://res.cloudinary.com/dguiepgvw/image/upload/v1473401605/cropped_white_profile_noun_468156_cc_lw2b04.png"
+<br>>  end
+</div>
+      </div><div class="list-name">password=
+      <div class="list-source">>  def password=(password)
+<br>>>>    @password = password
+<br>>>>    self.password_digest = BCrypt::Password.create(password)
+<br>>  end
+</div>
+      </div><div class="list-name">is_password?
+      <div class="list-source">>  def is_password?(password)
+<br>>>>    BCrypt::Password.new(self.password_digest).is_password?(password)
+<br>>  end
+</div>
+      </div><div class="list-name">reset_session_token!
+      <div class="list-source">>  def reset_session_token!
+<br>>>>    self.session_token = SecureRandom.urlsafe_base64(32)
+<br>>>>    self.save
+<br>>>>    self.session_token
+<br>>  end
+</div>
+      </div><div class="list-name">ensure_picture_url
+      <div class="list-source">>  def ensure_picture_url
+<br>>>>    self.picture_url ||= "https://res.cloudinary.com/dguiepgvw/image/upload/v1473401605/cropped_white_profile_noun_468156_cc_lw2b04.png"
+<br>>  end
+</div>
+      </div><div class="list-name">ensure_session_token
+      <div class="list-source">>  def ensure_session_token
+<br>>>>    self.session_token ||= SecureRandom.urlsafe_base64(32)
+<br>>  end
+</div>
+      </div>
+          </ul>
+          <ul>Associations
+          <div class="list-name">has_many: restaurants
+      <div class="list-source">primary_key: id
+foreign_key: owner_id
+class_name: Restaurant</div>
+      </div><div class="list-name">has_many: reviews
+      <div class="list-source">foreign_key: reviewer_id
+class_name: Review</div>
+      </div>
+          </ul>
+        </div>
+      </div>
+      </div></body> </html>
