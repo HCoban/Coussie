@@ -2,7 +2,7 @@ import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
 class ReviewShow extends React.Component {
-  constructor({id, deleteReview, reviewerpic, reviewer, currentUser, city, vote, description}) {
+  constructor({id, review, deleteReview, reviewerpic, reviewer, currentUser, city, vote, description}) {
     super();
     this.id = id;
     this.reviewerpic = reviewerpic;
@@ -13,6 +13,7 @@ class ReviewShow extends React.Component {
     this.description = description;
     this.handleDelete = this.handleDelete.bind(this);
     this.deleteReview = deleteReview;
+    this.review = review;
   }
 
   handleDelete(e) {
@@ -34,6 +35,7 @@ class ReviewShow extends React.Component {
           <ul className="reviewer-details">
             <li>{this.reviewer}</li>
             <li>{this.city}</li>
+            <li className="date" >{this.review.time_distance}</li>
           </ul>
         </div>
         <div className="review-desc-container">
