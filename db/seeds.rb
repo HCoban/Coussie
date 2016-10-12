@@ -1,4 +1,4 @@
-
+#
 # User.create(username: "guest", password: "password", picture_url: "https://randomuser.me/api/portraits/women/58.jpg")
 #
 # User.create(username: "bella", password: "password", picture_url: "https://randomuser.me/api/portraits/women/2.jpg")
@@ -36,14 +36,14 @@
 # User.create(username: "serafim", password: "password", picture_url: "https://randomuser.me/api/portraits/men/80.jpg")
 # User.create(username: "stella", password: "password", picture_url: "https://randomuser.me/api/portraits/women/63.jpg")
 # User.create(username: "rasmus", password: "password", picture_url: "https://randomuser.me/api/portraits/men/4.jpg")
-#
-#
-#
-#
-#
-#
-#
-#
+
+
+
+
+
+
+
+
 # restaurant_categories = {
 #   greek: {restaurants: [1, 2, 3, 4, 5], images: [
 #     "https://res.cloudinary.com/dguiepgvw/image/upload/v1473281256/photo-1414358154612-ae3d3c120004_znqtid.jpg",
@@ -134,8 +134,8 @@
 # #asian restaurants
 # Restaurant.create(name: "Wok", city: "San Francisco", lat: 37.764161, lng: -122.464493, category_id: 5, owner_id: 1, address: "Irving St & 7th Ave", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472855378/photo-1470256699805-a29e1b58598a_ucyhud.jpg")
 # Restaurant.create(name: "Soup and Noodles", city: "San Francisco", lat: 37.756100, lng: -122.435340, category_id: 5, owner_id: 1, address: "3956 21st Street", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1472855378/photo-1470256699805-a29e1b58598a_ucyhud.jpg")
-#
-#
+
+
 reviews = [
   {vote: 5, review: "Wow. This place is really cool. It's close to my work so I often stop by for a take-away. I must say that both the choice and the location is great."},
   {vote: 5, review: "Last night we visited this restaurant with my visitors from abroad and they all loved it! It has a great choice of wine and coctails. The staff is very nice, too! I am looking forward to the next visit!"},
@@ -167,9 +167,31 @@ reviews = [
   {vote: 1, review: "Absolutely terrible!"},
   {vote: 1, review: "The manager is rude! He kicked us out just because we were loud! What the heck! This place is for seniors only."},
   {vote: 1, review: "I don't do much coussie but everybody should learn about this terrible place. The meet is raw, salad stinks, bread is like a stone! OMG!"},
-  {vote: 1, review: "Unfortunately my son likes this place. But I am not going to come again!"}
+  {vote: 1, review: "Unfortunately my son likes this place. But I am not going to come again!"},
+  {vote: 1, review: "Buffet is good, although fruits are missing. I highly recommend trying BBQ chicken."},
+  {vote: 2, review: "Found hair in my dish. Never again!"},
+  {vote: 4, review: "We had to wait 40 minute for our food. As they were closing soon we had to eat very fast and take the dessert out."},
+  {vote: 1, review: "Got food poisoning after lunch there! Not only me but also my friend so that beef was really not fresh. Next day I called their manager and complained but they did not seem to care."},
+  {vote: 5, review: "It is nice that they allow pets in and you can even order a meal for your dog!"},
+  {vote: 5, review: "Loving their California cobb salad and big BLT sandwich. Soups are good, too."},
+  {vote: 3, review: "Very simple and basic, but OK place to have a quick lunch. Do not expect a normal service though."},
+  {vote: 2, review: "Their restrooms are never clean and stinking. Food taste OK but I am not sure if they maintain their kitchen in the order."},
+  {vote: 4, review: "This restaurant is very romantic. You definitely want to have a date here! Try one of their Margaritas."},
+  {vote: 3, review: "The food was too salty. Had to ask to change. After that it was good."},
+  {vote: 5, review: "Our kids love spagetti with meatballs there! Great family restaurant."},
+  {vote: 1, review: "I was there two weeks ago but still can't forget worst steak ever. And for $40, come on, you can get it anywhere!"},
+  {vote: 3, review: "Sushi is OK but a little savorless. Didn't have reduce salt soy sauce."},
+  {vote: 4, review: "Restauant is good, although a bit small. Could hardly accommodate our company of 15 people."},
+  {vote: 5, review: "The interior looks amazing. You get the right Mediterranean feeling, especially after their amazing Sangria!"},
+  {vote: 2, review: "Was too crowded. Could not hear each other with my friend, had to shout all the time.  "},
+  {vote: 2, review: "Not a family-friendly restaurant. Didn't have a babyseat. Had to hold my baby on my hands all the time!"},
+  {vote: 4, review: "Great location, good food, average prices."},
+  {vote: 5, review: "Best duck I have ever had in my life! Want to come back soon to try rest of the menu."},
+  {vote: 3, review: "Had no vegetarian dishes at all. Had to stick with only appetizer."},
+  {vote: 5, review: "Everything was good."},
+  {vote: 4, review: "A bit overpriced, but in general good."}
 ]
-#
+
 # restaurant_id = 1
 # while restaurant_id <= Restaurant.count
 #   rand(1..6).times do
@@ -178,13 +200,14 @@ reviews = [
 #   end
 #   restaurant_id += 1
 # end
-#
 
-restaurant_id = rand(Restaurant.count)
-review_index = rand(reviews.length)
-Review.create(reviewer_id: rand(User.count)+1, restaurant_id: restaurant_id, vote: reviews[review_index][:vote], description: reviews[review_index][:review])
- 
-#
+
+10.times do
+  restaurant_id = rand(Restaurant.count)
+  review_index = rand(reviews.length)
+  Review.create(reviewer_id: rand(User.count)+1, restaurant_id: restaurant_id, vote: reviews[review_index][:vote], description: reviews[review_index][:review])
+end
+
 # Category.create(title: "Greek", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473229330/noun_437044_cc_m4cyud.png")
 # Category.create(title: "Italian", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473230741/noun_158755_cc_unirdj.png")
 # Category.create(title: "American", image_url: "https://res.cloudinary.com/dguiepgvw/image/upload/v1473229519/noun_304697_cc_p1kvbu.png")
