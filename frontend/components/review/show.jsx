@@ -2,15 +2,9 @@ import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
 class ReviewShow extends React.Component {
-  constructor({id, review, deleteReview, reviewerpic, reviewer, currentUser, city, vote, description}) {
+  constructor({review, deleteReview, currentUser}) {
     super();
-    this.id = id;
-    this.reviewerpic = reviewerpic;
-    this.reviewer = reviewer;
     this.currentUser = currentUser;
-    this.city = city;
-    this.vote = vote;
-    this.description = description;
     this.handleDelete = this.handleDelete.bind(this);
     this.deleteReview = deleteReview;
     this.review = review;
@@ -18,29 +12,29 @@ class ReviewShow extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    this.deleteReview({review: this.id});
+    this.deleteReview({review: this.review.id});
   }
 
   render() {
     let deleteButton = "";
-    if (this.currentUser && this.reviewer === this.currentUser.username) {
+    if (this.currentUser && this.review.reviewer === this.currentUser.username) {
       deleteButton = <input type="submit" value="Delete Review" className="delete-review" onClick={this.handleDelete} />;
     }
     return (
       <div className="review-show">
         <div className="reviewer-info">
           <ul className="reviewer-pic">
-            <img src={this.reviewerpic}></img>
+            <img src={this.review.reviewerpic}></img>
           </ul>
           <ul className="reviewer-details">
-            <li>{this.reviewer}</li>
-            <li>{this.city}</li>
+            <li>{this.review.reviewer}</li>
+            <li>{this.review.reviewer.city}</li>
             <li className="date" >{this.review.time_distance}</li>
           </ul>
         </div>
         <div className="review-desc-container">
-          <StarRatingComponent name="vote" editing={false} starCount={5} value={this.vote}/>
-          <li className="description">{this.description}</li>
+          <StarRatingComponent name="vote" editing={false} starCount={5} value={this.review.vote}/>
+          <li className="description">{this.review.description}</li>
           {deleteButton}
         </div>
       </div>

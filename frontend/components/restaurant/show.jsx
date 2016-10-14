@@ -46,9 +46,8 @@ class RestaurantShow extends React.Component {
           currentUser = this.props.currentUser;
         }
         return (
-          <ReviewShow key={key} deleteReview = {this.props.deleteReview} id={review.id} reviewerpic={review.pic}
-            reviewer={review.reviewer} currentUser={currentUser}
-            vote={review.vote} description={review.description} review={review} />
+          <ReviewShow key={key} deleteReview = {this.props.deleteReview}
+            currentUser={currentUser} review={review} />
         );
       } else {
         return (
