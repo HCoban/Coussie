@@ -20,11 +20,12 @@ class ReviewShow extends React.Component {
     if (this.currentUser && this.review.reviewer === this.currentUser.username) {
       deleteButton = <input type="submit" value="Delete Review" className="delete-review" onClick={this.handleDelete} />;
     }
+
     return (
       <div className="review-show">
         <div className="reviewer-info">
           <ul className="reviewer-pic">
-            <img src={this.review.reviewerpic}></img>
+            <img src={this.review.pic}></img>
           </ul>
           <ul className="reviewer-details">
             <li>{this.review.reviewer}</li>
