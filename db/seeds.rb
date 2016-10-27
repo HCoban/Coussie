@@ -203,7 +203,7 @@ reviews = [
 
 
 10.times do
-  restaurant_id = rand(Restaurant.count)
+  restaurant_id = rand(Restaurant.count) + 1
   review_index = rand(reviews.length)
   Review.create(reviewer_id: rand(User.count)+1, restaurant_id: restaurant_id, vote: reviews[review_index][:vote], description: reviews[review_index][:review])
 end
