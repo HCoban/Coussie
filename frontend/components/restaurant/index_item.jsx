@@ -5,8 +5,8 @@ import StarRatingComponent from 'react-star-rating-component';
 
 
 const RestaurantIndexItem = ({restaurant, router}) => {
-  let reviewKeys = Object.keys(restaurant.reviews);
-  let lastReviewIndex = reviewKeys[reviewKeys.length-1];
+  // let reviewKeys = Object.keys(restaurant.reviews);
+  // let lastReviewIndex = reviewKeys[reviewKeys.length-1];
   let link = `/restaurants/${restaurant.id}`;
   let mainPic;
   if (restaurant.images) {
@@ -15,12 +15,11 @@ const RestaurantIndexItem = ({restaurant, router}) => {
   } else {
     mainPic = undefined;
   }
-
   let reviewDescription;
-  if (restaurant.reviews[lastReviewIndex].description.length > 180) {
-    reviewDescription = `${restaurant.reviews[lastReviewIndex].description.slice(0, 185)}...`;
+  if (restaurant.lastReview.description.length > 180) {
+    reviewDescription = `${restaurant.lastReview.description.slice(0, 185)}...`;
   } else {
-    reviewDescription = restaurant.reviews[lastReviewIndex].description;
+    reviewDescription = restaurant.lastReview.description;
   }
   return (
     <div className="restaurant-index-item">
@@ -37,7 +36,7 @@ const RestaurantIndexItem = ({restaurant, router}) => {
         <div className="restaurant-item-city">{restaurant.address}</div>
         <div className="review-container">
           <div className="reviewer-picture">
-            <img src={restaurant.reviews[lastReviewIndex].pic}></img>
+            <img src={restaurant.lastReview.picture}></img>
           </div>
           <div className="review">
             <p className="review-description">

@@ -8,6 +8,8 @@ const RestaurantReducer = (state = {}, action) => {
       return merge({}, state, action.restaurants);
     case CategoryConstants.RECEIVE_SINGLE_CATEGORY:
       return merge({}, action.restaurants);
+    case RestaurantConstants.RECEIVE_SINGLE_RESTAURANT:
+      return merge({}, state, action.restaurant);
     default:
       return state;
   }

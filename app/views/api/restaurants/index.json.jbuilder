@@ -6,16 +6,13 @@
     json.set! restaurant.id do
       json.ranking (positions.index(restaurant.average_rating) + 1).ordinalize
       json.average_rating restaurant.average_rating
-      json.reviews do
-        restaurant.reviews.each do |review|
-          json.set! review.id do
-            json.reviewer review.reviewer.username
-            json.pic review.reviewer.picture_url
-            json.time_distance (distance_of_time_in_words(Time.now - review.created_at) + " ago")
-            json.extract! review, :vote, :description, :id
-          end
-        end
+      json.lastReview do
+        review = restaurant.reviews.last
+        json.id review.id
+        json.picture review.reviewer.picture_url
+        json.description review.description
       end
+      json.reviews({})
       json.images do
         restaurant.images.each do |image|
           json.set! image.id do

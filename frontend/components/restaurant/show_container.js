@@ -1,6 +1,6 @@
 import RestaurantShow from './show';
 import { connect } from 'react-redux';
-import { editReview, deleteReview } from '../../actions/restaurant_actions';
+import { editReview, deleteReview, requestSingleRestaurant } from '../../actions/restaurant_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const restaurantId = parseInt(ownProps.params.restaurantId);
@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
+  requestSingleRestaurant: (id) => dispatch(requestSingleRestaurant(id)),
   editReview: (review) => dispatch(editReview(review)),
   deleteReview: (review) => dispatch(deleteReview(review))
 });

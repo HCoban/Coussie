@@ -5,7 +5,8 @@ class Api::CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    render :show;
+    category = Category.find(params[:id])
+    @restaurants = category.restaurants
+    render "api/restaurants/index"
   end
 end

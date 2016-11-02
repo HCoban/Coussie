@@ -16,6 +16,11 @@ class RestaurantShow extends React.Component {
     this._imageGallery.pause();
   }
 
+  componentDidMount() {
+    this.props.requestSingleRestaurant(this.props.params.restaurantId);
+  }
+
+
   render () {
 
     let stars;
@@ -30,7 +35,7 @@ class RestaurantShow extends React.Component {
       stars = "";
     }
 
-    let restaurant = this.props.restaurant || {};
+    let restaurant = this.props.restaurant || {reviews: {}, images: {}};
     let reviewKeys = Object.keys(restaurant.reviews).sort ((a, b) => {
       return b - a;
     });

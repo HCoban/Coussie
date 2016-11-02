@@ -39,3 +39,11 @@ export const fetchFilteredRestaurants = (data, success) => {
     success
   });
 };
+
+export const fetchSingleRestaurant = (id, success) => {
+  $.ajax({
+    method: "GET",
+    url: `api/restaurants/${id}`,
+    success: success
+  });
+};
