@@ -5,8 +5,6 @@ import StarRatingComponent from 'react-star-rating-component';
 
 
 const RestaurantIndexItem = ({restaurant, router}) => {
-  // let reviewKeys = Object.keys(restaurant.reviews);
-  // let lastReviewIndex = reviewKeys[reviewKeys.length-1];
   let link = `/restaurants/${restaurant.id}`;
   let mainPic;
   if (restaurant.images) {
