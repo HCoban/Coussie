@@ -6,6 +6,7 @@ export const RestaurantConstants = {
   CREATE_REVIEW: "CREATE_REVIEW",
   EDIT_REVIEW: "EDIT_REVIEW",
   DELETE_REVIEW: "DELETE_REVIEW",
+  DELETE_SINGLE_REVIEW: "DELETE_SINGLE_REVIEW",
   FILTER: "FILTER"
 };
 
@@ -40,6 +41,11 @@ export const editReview = (review) => ({
 
 export const deleteReview = (review) => ({
   type: RestaurantConstants.DELETE_REVIEW,
+  review
+});
+
+export const deleteSingleReview = (review) => ({
+  type: RestaurantConstants.DELETE_SINGLE_REVIEW,
   review
 });
 

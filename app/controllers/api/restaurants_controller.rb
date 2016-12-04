@@ -27,6 +27,7 @@ class Api::RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find_by(id: params["id"])
+    @reviews = @restaurant.reviews
     render :show
   end
 

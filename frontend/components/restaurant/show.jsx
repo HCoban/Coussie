@@ -8,6 +8,11 @@ import StarRatingComponent from 'react-star-rating-component';
 
 class RestaurantShow extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { length: this.props.restaurant.reviews.length };
+  }
+
   handlePlay() {
     this._imageGallery.play();
   }
@@ -20,9 +25,7 @@ class RestaurantShow extends React.Component {
     this.props.requestSingleRestaurant(this.props.params.restaurantId);
   }
 
-
   render () {
-
     let stars;
     if (this.props.restaurant.average_rating) {
       stars = <StarRatingComponent

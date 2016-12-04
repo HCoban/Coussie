@@ -10,6 +10,11 @@ const RestaurantReducer = (state = {}, action) => {
       return merge({}, action.restaurants);
     case RestaurantConstants.RECEIVE_SINGLE_RESTAURANT:
       return merge({}, state, action.restaurant);
+    case RestaurantConstants.DELETE_SINGLE_REVIEW:
+      let newState = Object.assign({}, state);
+      newState[action.review.restaurant_id] = newState[action.review.restaurant_id] || {};
+      delete newState[action.review.restaurant_id]["reviews"][action.review.review_id];
+      return newState;
     default:
       return state;
   }

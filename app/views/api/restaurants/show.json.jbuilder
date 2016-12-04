@@ -1,6 +1,6 @@
 json.set! @restaurant.id do
   json.reviews do
-    @restaurant.reviews.each do |review|
+    @reviews.each do |review|
       json.set! review.id do
         json.reviewer review.reviewer.username
         json.pic review.reviewer.picture_url
