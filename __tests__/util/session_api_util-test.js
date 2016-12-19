@@ -73,5 +73,13 @@ describe('session_api_util', () => {
       expect(ajaxCallArg.url).toEqual('api/session');
       expect(ajaxCallArg.type || ajaxCallArg.method).toMatch('DELETE');
     });
+
+    it('triggers the success callback', () => {
+      logOut(mockSuccessCallback);
+
+      const ajaxCallArg = $.ajax.mock.calls[0][0];
+      ajaxCallArg.success('dummy result');
+      expect(mockSuccessCallback).toBeCalledWith('dummy result');
+    });
   });
 });
