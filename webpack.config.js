@@ -19,7 +19,7 @@ module.exports = {
       },
       {
         test: /\.node$/,
-      loader: "node-loader"
+        loader: "node-loader"
       }
     ]
   },

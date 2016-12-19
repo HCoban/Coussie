@@ -18,7 +18,9 @@ export const createReview = (data, success) => {
 export const editReview = (data, success) => {
   $.ajax({
     method: "PATCH",
-    // url:
+    url: `api/reviews/${data.review.id}`,
+    data,
+    success
   });
 };
 
