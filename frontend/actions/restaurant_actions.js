@@ -16,7 +16,7 @@ export const requestAllRestaurants = () => ({
 
 export const receiveAllRestaurants = (restaurants) => ({
   type: RestaurantConstants.RECEIVE_ALL_RESTAURANTS,
-  restaurants,
+  restaurants
 });
 
 export const requestSingleRestaurant = (id) => ({
