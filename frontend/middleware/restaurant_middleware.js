@@ -17,7 +17,8 @@ const RestaurantMiddleware = ({dispatch}) => next => action => {
       fetchSingleRestaurant(action.id, receiveSingleRestaurantSuccess);
       return next(action);
     case RestaurantConstants.CREATE_REVIEW:
-      return createReview(action.review, receiveSingleRestaurantSuccess);
+      createReview(action.review, receiveSingleRestaurantSuccess);
+      return next(action);
     case RestaurantConstants.EDIT_REVIEW:
       return editReview(action.review, receiveAllRestaurantSuccess);
     case RestaurantConstants.DELETE_REVIEW:
