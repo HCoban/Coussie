@@ -11,6 +11,8 @@ class Navbar extends React.Component {
     this.setSearch = this.setSearch.bind(this);
     this.logout = this.logout.bind(this);
     this.home = this.home.bind(this);
+    this.delay = this.delay.bind(this);
+    this.delayTimer = 0;
   }
 
   handleUserButton () {
@@ -41,13 +43,20 @@ class Navbar extends React.Component {
 
   setSearch (e) {
     e.preventDefault();
-    this.setState({[e.currentTarget.name]: e.currentTarget.value}, this.filterRestaurants);
+    this.setState({[e.currentTarget.name]: e.currentTarget.value}, this.delay);
   }
 
-  filterRestaurants () {
+  delay() {
     let filter = this.state.search;
+    clearTimeout(this.delayTimer);
+    this.delayTimer = setTimeout(() => this.filterRestaurants(filter), 300);
+  }
+
+  filterRestaurants (filter) {
     this.props.filter({query: filter});
-    this.props.router.push("/");
+    if (this.props.router.location.pathname !== "/") {
+      this.props.router.push("/");
+    }
   }
 
   searchBox () {
