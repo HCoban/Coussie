@@ -43,6 +43,7 @@
     "node-loader": "^0.6.0",
     "react": "^15.3.1",
     "react-addons-test-utils": "^15.4.1",
+    "react-bootstrap": "^0.31.5",
     "react-dom": "^15.3.1",
     "react-image-gallery": "^0.7.4",
     "react-jrate": "^0.1.2",
