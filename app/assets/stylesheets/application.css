@@ -230,7 +230,7 @@ header {
 
 .restaurant-index-item {
   display: block;
-  height: 160px;
+  height: 190px;
   border-bottom: 1px solid #ccc;
   padding: 5px;
   margin-bottom: 20px;
@@ -485,7 +485,7 @@ header {
   background-color: red;
   border-radius: 50%;
   cursor: pointer;
-  width: 140px;
+  width: 175px;
   display: flex;
   align-items: center;
   justify-content: center;
