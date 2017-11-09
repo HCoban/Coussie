@@ -49,3 +49,12 @@ export const fetchSingleRestaurant = (id, success) => {
     success: success
   });
 };
+
+export const fetchMoreReviews = (id, page, success) => {
+  $.ajax({
+    method: "GET",
+    url: "api/reviews",
+    data: { review: { restaurant_id: id, page: page } },
+    success: success
+  });
+}

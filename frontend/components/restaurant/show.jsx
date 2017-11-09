@@ -5,12 +5,17 @@ import ReviewShow from '../review/show';
 import NewReviewFormContainer from '../review/form_container';
 import ImageGallery from 'react-image-gallery';
 import StarRatingComponent from 'react-star-rating-component';
+import { Button } from 'react-bootstrap';
 
 class RestaurantShow extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { length: this.props.restaurant.reviews.length };
+    this.state = {
+      length: this.props.restaurant.reviews.length,
+      page: 0
+    };
+    this.loadMoreReviews = this.loadMoreReviews.bind(this);
   }
 
   handlePlay() {
@@ -23,6 +28,7 @@ class RestaurantShow extends React.Component {
 
   componentDidMount() {
     this.props.requestSingleRestaurant(this.props.params.restaurantId);
+    this.loadMoreReviews()
   }
 
   render () {
@@ -38,14 +44,9 @@ class RestaurantShow extends React.Component {
       stars = "";
     }
 
-    let restaurant = this.props.restaurant || {reviews: {}, images: {}};
-    let reviewKeys = Object.keys(restaurant.reviews).sort ((a, b) => {
-      return b - a;
-    });
-
-    let reviews = reviewKeys.map ((key) => {
-      let review = restaurant.reviews[key];
-
+    let restaurant = this.props.restaurant || {reviews: {}, images: {}}
+    let reviews = this.props.reviews || [];
+    let renderReviews = reviews.map ((review, key) => {
       if (review.reviewer) {
         let currentUser;
         if (!this.props.currentUser) {
@@ -115,10 +116,16 @@ class RestaurantShow extends React.Component {
         <div className="restaurant-review">
           <span>Reviews</span>
           {newReview}
-          {reviews}
+          {renderReviews}
+          <Button onClick={this.loadMoreReviews} bsStyle="primary">Load More</Button>
         </div>
       </div>
     );
+  }
+
+  loadMoreReviews() {
+    let currentPage = this.state.page;
+    this.props.requestMoreReviews(this.props.params.restaurantId, currentPage)
   }
 }
 
