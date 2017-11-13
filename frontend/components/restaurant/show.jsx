@@ -8,12 +8,10 @@ import StarRatingComponent from 'react-star-rating-component';
 import { Button } from 'react-bootstrap';
 
 class RestaurantShow extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      length: this.props.restaurant.reviews.length,
-      page: 0
+      length: this.props.restaurant.reviews.length
     };
     this.loadMoreReviews = this.loadMoreReviews.bind(this);
   }
@@ -124,7 +122,7 @@ class RestaurantShow extends React.Component {
   }
 
   loadMoreReviews() {
-    let currentPage = this.state.page;
+    let currentPage = this.props.currentPage;
     this.props.requestMoreReviews(this.props.params.restaurantId, currentPage)
   }
 }
