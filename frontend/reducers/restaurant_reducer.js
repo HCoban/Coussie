@@ -9,12 +9,14 @@ const RestaurantReducer = (state = {}, action) => {
     case CategoryConstants.RECEIVE_SINGLE_CATEGORY:
       return merge({}, action.restaurants);
     case RestaurantConstants.RECEIVE_SINGLE_RESTAURANT:
-      return merge({}, state, action.restaurant);
+      let newStateWithRestaurant = Object.assign({}, state);
+      newStateWithRestaurant[action.restaurant.id] = action.restaurant;
+      return newStateWithRestaurant;
     case RestaurantConstants.DELETE_SINGLE_REVIEW:
-      let newState = Object.assign({}, state);
-      newState[action.review.restaurant_id] = newState[action.review.restaurant_id] || {};
-      delete newState[action.review.restaurant_id]["reviews"][action.review.review_id];
-      return newState;
+      let newStateWithReview = Object.assign({}, state);
+      newStateWithReview[action.review.restaurant_id] = newStateWithReview[action.review.restaurant_id] || {};
+      delete newStateWithReview[action.review.restaurant_id]["reviews"][action.review.review_id];
+      return newStateWithReview;
     default:
       return state;
   }

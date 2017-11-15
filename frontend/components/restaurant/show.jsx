@@ -10,9 +10,6 @@ import { Button } from 'react-bootstrap';
 class RestaurantShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      length: this.props.restaurant.reviews.length
-    };
     this.loadMoreReviews = this.loadMoreReviews.bind(this);
   }
 
@@ -29,94 +26,117 @@ class RestaurantShow extends React.Component {
     this.loadMoreReviews()
   }
 
-  render () {
-    let stars;
-    if (this.props.restaurant.average_rating) {
-      stars = <StarRatingComponent
-          name="average-rating"
-          editing={false}
-          starCount={5}
-          value={this.props.restaurant.average_rating}
-          />;
-    } else {
-      stars = "";
+  renderRestaurantInfo() {
+    const { restaurant } = this.props;
+    const stars = restaurant.average_rating
+    ? <StarRatingComponent
+      name="average-rating"
+      editing={false}
+      starCount={5}
+      value={restaurant.average_rating}
+    />
+    : null;
+
+    return (
+      <div className="restaurant-info">
+        <h2>{restaurant.name}</h2>
+        <div className="restaurant-stars">
+          {stars}
+        </div>
+        {this.renderRanking()}
+        <h3>{restaurant.address}</h3>
+        <h3>{restaurant.city}</h3>
+        <h3>{restaurant.telephone}</h3>
+      </div>
+    );
+  }
+
+  renderReviews() {
+    const { reviews, deleteReview, currentUser, restaurant } = this.props;
+    if (!reviews) {
+      return null;
     }
 
-    let restaurant = this.props.restaurant || {reviews: {}, images: {}}
-    let reviews = this.props.reviews || [];
-    let renderReviews = reviews.map ((review, key) => {
-      if (review.reviewer) {
-        let currentUser;
-        if (!this.props.currentUser) {
-          currentUser = undefined;
-        } else {
-          currentUser = this.props.currentUser;
+    return (
+      <div className="restaurant-review">
+        <span>Reviews</span>
+        <NewReviewFormContainer restaurantId={restaurant.id}/>
+        { reviews.map ((review, key) => {
+            return (
+              <ReviewShow
+                key={key}
+                deleteReview ={deleteReview}
+                currentUser={currentUser}
+                review={review}
+              />
+            );
+          })
         }
-        return (
-          <ReviewShow key={key} deleteReview = {this.props.deleteReview}
-            currentUser={currentUser} review={review} />
-        );
-      } else {
-        return (
-          <ReviewShow key={key} vote={review.vote} description={review.description}/>
-        );
-      }
-    });
+        <Button onClick={this.loadMoreReviews} bsStyle="primary">Load More</Button>
+      </div>
+    );
+  }
 
-    let mapAndMarker;
-    if (restaurant.lat) {
-      mapAndMarker = <RestaurantMap restaurant={restaurant}/>;
-    } else {
-      mapAndMarker = "";
+  renderRanking() {
+    const { restaurant } = this.props;
+    if (!restaurant || !restaurant.ranking) {
+      return null;
     }
 
-    let image_urls = Object.keys(this.props.restaurant.images).map (key => {
-      return this.props.restaurant.images[key];
-    });
+    const text = `Ranked ${restaurant.ranking} in ${restaurant.category} Restaurants`;
+    return (
+      <h3>
+        {text}
+      </h3>
+    );
+  }
 
-    let images = [];
+  renderImages() {
+    const { restaurant } = this.props;
+    if (!restaurant || !restaurant.images) {
+      return null;
+    }
 
-    image_urls.forEach (image_url => {
-      images.push({original: image_url.image_url, thumbnail: image_url.image_url});
-    });
+    const images =
+      Object.keys(restaurant.images).map (key => {
+        let image = restaurant.images[key];
+        return {
+          original: image.image_url,
+          thumbnail: image.image_url
+        };
+      });
 
-    let newReview;
-      newReview = <NewReviewFormContainer restaurantId={this.props.restaurantId}/>;
-    let averageRating = this.props.restaurant.average_rating;
-    let categoryTitle = `Ranked ${this.props.restaurant.ranking} in ${this.props.restaurant.category} Restaurants`;
+    return (
+      <ImageGallery
+        ref={i => this._imageGallery = i}
+        items = {images}
+        slideInterval={2000}
+        showBullets={true}
+      />
+    );
+  }
+
+  render () {
+    const {
+      restaurant
+    } = this.props;
+
+    const mapAndMarker = restaurant.lat
+      ? <RestaurantMap restaurant={restaurant}/>
+      : null;
+
     return (
       <div className="restaurant-show-container">
         <div className="restaurant-show">
           <div className="show-column-1">
             {mapAndMarker}
-            <div className="restaurant-info">
-              <h2>{this.props.restaurant.name}</h2>
-              <div className="restaurant-stars">
-                {stars}
-              </div>
-              <h3>{categoryTitle}</h3>
-              <h3></h3>
-              <h3>{this.props.restaurant.address}</h3>
-              <h3>{this.props.restaurant.city}</h3>
-              <h3>{this.props.restaurant.telephone}</h3>
-            </div>
+            {this.renderRestaurantInfo()}
           </div>
           <div className="show-column-2">
-            <ImageGallery
-              ref={i => this._imageGallery = i}
-              items = {images}
-              slideInterval={2000}
-              showBullets={true}
-            />
-
+          {this.renderImages()}   
           </div>
         </div>
-        <div className="restaurant-review">
-          <span>Reviews</span>
-          {newReview}
-          {renderReviews}
-          <Button onClick={this.loadMoreReviews} bsStyle="primary">Load More</Button>
-        </div>
+        {this.renderReviews()}
       </div>
     );
   }
