@@ -5,7 +5,6 @@ import ReviewShow from '../review/show';
 import NewReviewFormContainer from '../review/form_container';
 import ImageGallery from 'react-image-gallery';
 import StarRatingComponent from 'react-star-rating-component';
-import { Button } from 'react-bootstrap';
 
 class RestaurantShow extends React.Component {
   constructor(props) {
@@ -72,7 +71,7 @@ class RestaurantShow extends React.Component {
             );
           })
         }
-        <Button onClick={this.loadMoreReviews} bsStyle="primary">Load More</Button>
+        <a role="button" onClick={this.loadMoreReviews}>Load More</a>
       </div>
     );
   }
