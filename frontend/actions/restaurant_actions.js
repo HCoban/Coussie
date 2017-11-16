@@ -5,8 +5,6 @@ export const RestaurantConstants = {
   RECEIVE_SINGLE_RESTAURANT: "RECEIVE_SINGLE_RESTAURANT",
   CREATE_REVIEW: "CREATE_REVIEW",
   EDIT_REVIEW: "EDIT_REVIEW",
-  DELETE_REVIEW: "DELETE_REVIEW",
-  DELETE_SINGLE_REVIEW: "DELETE_SINGLE_REVIEW",
   FILTER: "FILTER"
 };
 
@@ -36,16 +34,6 @@ export const createReview = (review) => ({
 
 export const editReview = (review) => ({
   type: RestaurantConstants.EDIT_REVIEW,
-  review
-});
-
-export const deleteReview = (review) => ({
-  type: RestaurantConstants.DELETE_REVIEW,
-  review
-});
-
-export const deleteSingleReview = (review) => ({
-  type: RestaurantConstants.DELETE_SINGLE_REVIEW,
   review
 });
 

@@ -10,7 +10,6 @@ import {
   createReview,
   editReview,
   deleteReview,
-  deleteSingleReview,
   filter
 } from '../../frontend/actions/restaurant_actions';
 

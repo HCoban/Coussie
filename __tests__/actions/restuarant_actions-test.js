@@ -7,7 +7,6 @@ import {
   createReview,
   editReview,
   deleteReview,
-  deleteSingleReview,
   filter
 } from '../../frontend/actions/restaurant_actions';
 
@@ -169,24 +168,6 @@ describe('restaurant_actions', () => {
     it('should take in a review and set it as action\'s review property', () => {
       let review = { fakereview: 1};
       let action = deleteReview(review);
-      expect(action.review).toEqual(review);
-    });
-  });
-
-  describe('deleteSingleReview', () => {
-    it('exports a deleteSingleReview function', () => {
-      expect(typeof deleteSingleReview).toEqual('function');
-    });
-
-    it('returns an action with type "deleteSingleReview"', () => {
-      let action = deleteSingleReview();
-      expect(typeof action).toEqual('object');
-      expect(action.type).toEqual('DELETE_SINGLE_REVIEW');
-    });
-
-    it('should take in a review and set it as action\'s review property', () => {
-      let review = { fakereview: 1};
-      let action = deleteSingleReview(review);
       expect(action.review).toEqual(review);
     });
   });

@@ -13,7 +13,7 @@ class ReviewShow extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    this.deleteReview({review: this.review.id});
+    this.deleteReview({reviewId: this.review.id});
     this.setState({["visible"]: false});
   }
 

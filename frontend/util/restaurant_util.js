@@ -25,7 +25,7 @@ export const editReview = (data, success) => {
 };
 
 export const deleteReview = (reviewId, success) => {
-  let targetUrl = `api/reviews/${reviewId.review}`;
+  let targetUrl = `api/reviews/${reviewId}`;
   $.ajax({
     method: "DELETE",
     url: targetUrl,
