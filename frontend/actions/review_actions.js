@@ -3,7 +3,8 @@ export const ReviewConstants = {
   RECEIVE_MORE_REVIEWS: "RECEIVE_MORE_REVIEWS",
   DELETE_REVIEW: "DELETE_REVIEW",
   CLEAR_SINGLE_REVIEW: "CLEAR_SINGLE_REVIEW",
-  CLEAR_REVIEWS: "CLEAR_REVIEWS"
+  CLEAR_REVIEWS: "CLEAR_REVIEWS",
+  ADD_NEW_REVIEW: "ADD_NEW_REVIEW"
 }
 
 export const requestMoreReviews = (restaurantId, page) => ({
@@ -29,4 +30,9 @@ export const clearSingleReview = (reviewId) => ({
 
 export const clearReviews = () => ({
   type: ReviewConstants.CLEAR_REVIEWS
+})
+
+export const addNewReview = (review) => ({
+  type: ReviewConstants.ADD_NEW_REVIEW,
+  review
 })

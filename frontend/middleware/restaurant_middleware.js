@@ -1,5 +1,5 @@
 import { RestaurantConstants, receiveAllRestaurants, receiveSingleRestaurant, filter } from '../actions/restaurant_actions';
-import { receiveMoreReviews, clearReviews, clearSingleReview, ReviewConstants } from '../actions/review_actions';
+import { receiveMoreReviews, clearReviews, addNewReview, clearSingleReview, ReviewConstants } from '../actions/review_actions';
 import { receiveSingleCategory } from '../actions/category_actions';
 import { fetchAllRestaurants, fetchFilteredRestaurants, fetchMoreReviews, fetchSingleRestaurant, createReview, editReview, deleteReview } from '../util/restaurant_util';
 
@@ -13,6 +13,7 @@ const RestaurantMiddleware = ({dispatch, getState}) => next => action => {
   const deleteReviewSuccess = (data) => dispatch(clearSingleReview(data))
   const receiveSingleRestaurantSuccess = (data) => dispatch(receiveSingleRestaurant(data));
   const receiveMoreReviewsSuccess = (data) => dispatch(receiveMoreReviews(data));
+  const createReviewSuccess = (data) => dispatch(addNewReview(data));
 
   switch (action.type) {
     case RestaurantConstants.REQUEST_ALL_RESTAURANTS:
@@ -25,7 +26,7 @@ const RestaurantMiddleware = ({dispatch, getState}) => next => action => {
       fetchMoreReviews(action.restaurantId, getState().reviews.currentPage, receiveMoreReviewsSuccess);
       return next(action);
     case RestaurantConstants.CREATE_REVIEW:
-      createReview(action.review, receiveSingleRestaurantSuccess);
+      createReview(action.review, createReviewSuccess);
       return next(action);
     case RestaurantConstants.EDIT_REVIEW:
       return editReview(action.review, receiveAllRestaurantSuccess);

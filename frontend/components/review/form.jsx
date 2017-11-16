@@ -15,7 +15,7 @@ class NewReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview({review: {vote: this.state.vote, description: this.state.description, restaurant_id: this.props.restaurantId}});
-    this.navigateToRestaurantShow();
+    this.setState({vote: 3, description: ""});
   }
 
   navigateToRestaurantShow() {

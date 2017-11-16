@@ -1,12 +1,10 @@
 class Api::ReviewsController < ApplicationController
   def create
-    review = Review.new(review_params)
-    review.reviewer_id = current_user.id
+    @review = Review.new(review_params)
+    @review.reviewer_id = current_user.id
 
-    if review.save
-      @restaurant = review.restaurant
-      @reviews = @restaurant.reviews
-      render "api/restaurants/show"
+    if @review.save
+      render "api/reviews/show"
     else
       render json: @review.errors.full_messages, status: 422
     end

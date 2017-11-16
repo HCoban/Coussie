@@ -1,5 +1,6 @@
 import { ReviewConstants } from "../actions/review_actions";
 import merge from "lodash/merge";
+import { log } from "util";
 
 const initialState = { currentPage: 0, reviewList: [] };
 
@@ -15,6 +16,10 @@ const ReviewReducer = (state = initialState, action) => {
       return newStateWithReviews;
     case ReviewConstants.CLEAR_REVIEWS:
       return initialState;
+    case ReviewConstants.ADD_NEW_REVIEW:
+      let newStateWithNewReview = Object.assign({}, state);
+      newStateWithNewReview.reviewList = [action.review].concat(newStateWithNewReview.reviewList);
+      return newStateWithNewReview;
     default:
       return state;
   }

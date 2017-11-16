@@ -61,10 +61,10 @@ class RestaurantShow extends React.Component {
       <div className="restaurant-review">
         <span>Reviews</span>
         <NewReviewFormContainer restaurantId={restaurant.id}/>
-        { reviews.map ((review, key) => {
+        { reviews.map ((review) => {
             return (
               <ReviewShow
-                key={key}
+                key={review.id}
                 deleteReview ={deleteReview}
                 currentUser={currentUser}
                 review={review}
