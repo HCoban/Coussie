@@ -22,7 +22,7 @@ class ReviewShow extends React.Component {
     if (this.state.visible) {
       let deleteButton = "";
       if (this.currentUser && this.review.reviewer === this.currentUser.username) {
-        deleteButton = <input type="submit" value="Delete Review" className="delete-review" onClick={this.handleDelete} />;
+        deleteButton = <input type="submit" value="Delete Review" className="delete-review pointer" onClick={this.handleDelete} />;
       }
 
       return (

@@ -540,10 +540,14 @@ header {
 }
 
 .delete-review {
-  padding: 5px;
+  padding: 10px 15px;
   background-color: gray;
   color: white;
   border-radius: 5px;
+}
+
+.pointer:hover {
+  cursor: pointer;
 }
 
 .review-desc-container .description {

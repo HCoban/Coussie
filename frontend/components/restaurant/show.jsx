@@ -71,7 +71,7 @@ class RestaurantShow extends React.Component {
             );
           })
         }
-        <a role="button" onClick={this.loadMoreReviews}>Load More</a>
+        <a onClick={this.loadMoreReviews}>Load More</a>
       </div>
     );
   }

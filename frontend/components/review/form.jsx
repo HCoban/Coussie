@@ -59,7 +59,7 @@ class NewReviewForm extends React.Component {
       );
       star = <StarRatingComponent name="newVote" value={this.state.vote} editing={true} onStarClick={this.onStarClick}/>;
       description = <textarea onChange={this.update("description")} value={this.state.description} cols="55" rows="10" placeholder="Please write your review here" className="input-description"></textarea>;
-      submit = <input className="new-review-submit" type="submit" value="Submit"></input>;
+      submit = <input className="new-review-submit pointer" type="submit" value="Submit"></input>;
     } else {
       reviewerPic = <img src="https://res.cloudinary.com/dguiepgvw/image/upload/v1472687944/noun_138589_cc_rsfmug.png"></img>;
       reviewerDetails = "";
