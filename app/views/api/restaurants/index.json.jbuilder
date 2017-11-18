@@ -8,6 +8,7 @@
       json.description review.description
     end
     json.category restaurant.category.title
-    json.extract! restaurant, :id, :name, :city, :category_id, :price_range, :address, :image_url
+    json.image_url restaurant.images&.first&.image_url
+    json.extract! restaurant, :id, :name, :city, :category_id, :price_range, :address
   end
 end
